@@ -1,47 +1,24 @@
-# Percy dynamic-text ignore — variant 2
+# Variant 2 - changed values
 # Snapshot NAMES are identical in both files on purpose: variant 2 is
-# compared against variant 1 as its baseline.
-
-- name: Dates
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/dates-2.html
-  waitForTimeout: 2000
-
-- name: Timestamps
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/timestamps-2.html
-  waitForTimeout: 2000
-
-- name: Phone numbers
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/phone-numbers-2.html
-  waitForTimeout: 2000
-
-- name: Prices
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/prices-2.html
-  waitForTimeout: 2000
-
-- name: Email addresses
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/email-addresses-2.html
-  waitForTimeout: 2000
-
-- name: Numbers
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/numbers-2.html
-  waitForTimeout: 2000
-
-- name: Links
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/links-2.html
-  waitForTimeout: 2000
-
-- name: Typed-in text
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/typed-in-text-2.html
-  waitForTimeout: 2000
-
-- name: Custom text
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/custom-text-2.html
-  waitForTimeout: 2000
-
-- name: All types
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-all-types-2.html
-  waitForTimeout: 2000
-
-- name: Negative control
-  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/negative-control-2.html
-  waitForTimeout: 2000
+# compared against the variant 1 baseline snapshot of the same name.
+snapshots:
+  - name: "01 Mixed - Account dashboard"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-dashboard-2.html
+  - name: "02 Mixed - Invoice"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-invoice-2.html
+  - name: "03 Mixed - User profile"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-profile-2.html
+  - name: "04 Mixed - Build report"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-report-2.html
+  - name: "05 Mixed - Activity feed"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-feed-2.html
+  - name: "06 Focus - Dates, timestamps, phones"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-dates-timestamps-phones-2.html
+  - name: "07 Focus - Prices and numbers"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-prices-numbers-2.html
+  - name: "08 Focus - Emails and links"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-emails-links-2.html
+  - name: "09 Focus - Typed-in and custom text"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-typed-custom-2.html
+  - name: "10 Negative control"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/negative-control-2.html

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Negative control (variant 2)</title>
+<title>Account dashboard (variant 1)</title>
 <style>
   :root{--ink:#14181f;--mut:#5b6472;--line:#e3e6ea;--bg:#fff;--chip:#f4f6f8;--accent:#2e6ba8}
   *{box-sizing:border-box}
@@ -39,20 +39,46 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Negative control</h1>
-    <p class="sub">A real visual change beside dynamic values.</p>
-    <h2>Genuine visual change</h2>
-    <p>The badge below changes colour and wording between variants. That is a real
-    visual difference and Percy <strong>must still report it</strong> with every dynamic-text
-    rule switched on. A 0% diff here means the rules are swallowing genuine changes.</p>
-    <p><span style="display:inline-block;padding:8px 20px;border-radius:4px;background:#a8384c;color:#fff;font-weight:600">Rejected</span></p>
-    <h2>Dynamic values alongside it</h2>
+    <h1>Account dashboard</h1>
+    <p class="sub">All nine dynamic-text types in a dashboard layout.</p>
+    <h2>Summary</h2>
+    <div class="cards">
+      <div class="card"><div class="lbl">Results</div><div class="big">12 Results</div></div>
+      <div class="card"><div class="lbl">Snapshots</div><div class="big">48</div></div>
+      <div class="card"><div class="lbl">Coverage</div><div class="big">64%</div></div>
+      <div class="card"><div class="lbl">Duration</div><div class="big">00:48:22</div></div>
+    </div>
+    <h2>Account</h2>
     <table>
       <thead><tr><th>Field</th><th>Value</th></tr></thead>
       <tbody>
-        <tr><td class="k">Created on</td><td class="v">27 Mar 2026</td></tr>
-        <tr><td class="k">Amount due</td><td class="v">$3,815.42</td></tr>
-        <tr><td class="k">Snapshots</td><td class="v">1,205</td></tr>
+        <tr><td class="k">Created on</td><td class="v">10 Jan 2025</td></tr>
+        <tr><td class="k">ISO date</td><td class="v">2025-01-10</td></tr>
+        <tr><td class="k">Last run</td><td class="v">14:05</td></tr>
+        <tr><td class="k">Support line</td><td class="v">(855) 807-0572</td></tr>
+      </tbody>
+    </table>
+    <h2>Billing and contact</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Amount due</td><td class="v">$1,240.00</td></tr>
+        <tr><td class="k">India total</td><td class="v">₹99,999.00</td></tr>
+        <tr><td class="k">Billing contact</td><td class="v">sam@example.com</td></tr>
+        <tr><td class="k">Build</td><td class="v">percy.io/builds</td></tr>
+      </tbody>
+    </table>
+    <h2>Filters</h2>
+    <div class="rows">
+      <div class="row"><label>Search</label><input type="text" value="visual regression" readonly></div>
+      <div class="row"><label>Reviewer name</label><input type="text" value="Sam Carter" readonly></div>
+    </div>
+    <h2>References</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Order id</td><td class="v">ORD-48213</td></tr>
+        <tr><td class="k">Build id</td><td class="v">build-7f3a91</td></tr>
       </tbody>
     </table>
     <div class="static">
@@ -61,7 +87,7 @@
       content it should not touch.</p>
       <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
     </div>
-    <footer>Percy dynamic-text intelli-ignore fixture &middot; Negative control</footer>
+    <footer>Percy dynamic-text intelli-ignore fixture &middot; Account dashboard</footer>
   </div>
 </body>
 </html>

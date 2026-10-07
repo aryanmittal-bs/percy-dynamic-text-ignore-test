@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Negative control (variant 2)</title>
+<title>Typed-in text and custom text only (variant 2)</title>
 <style>
   :root{--ink:#14181f;--mut:#5b6472;--line:#e3e6ea;--bg:#fff;--chip:#f4f6f8;--accent:#2e6ba8}
   *{box-sizing:border-box}
@@ -39,20 +39,22 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Negative control</h1>
-    <p class="sub">A real visual change beside dynamic values.</p>
-    <h2>Genuine visual change</h2>
-    <p>The badge below changes colour and wording between variants. That is a real
-    visual difference and Percy <strong>must still report it</strong> with every dynamic-text
-    rule switched on. A 0% diff here means the rules are swallowing genuine changes.</p>
-    <p><span style="display:inline-block;padding:8px 20px;border-radius:4px;background:#a8384c;color:#fff;font-weight:600">Rejected</span></p>
-    <h2>Dynamic values alongside it</h2>
+    <h1>Typed-in text and custom text only</h1>
+    <p class="sub">Only input-field values and custom regex-matched references.</p>
+    <h2>Typed-in text</h2>
+    <div class="rows">
+      <div class="row"><label>Search</label><input type="text" value="baseline comparison" readonly></div>
+      <div class="row"><label>Reviewer name</label><input type="text" value="Dana Olsen" readonly></div>
+      <div class="row"><label>Reference</label><input type="text" value="REQ-9014" readonly></div>
+    </div>
+    <h2>Custom text</h2>
     <table>
       <thead><tr><th>Field</th><th>Value</th></tr></thead>
       <tbody>
-        <tr><td class="k">Created on</td><td class="v">27 Mar 2026</td></tr>
-        <tr><td class="k">Amount due</td><td class="v">$3,815.42</td></tr>
-        <tr><td class="k">Snapshots</td><td class="v">1,205</td></tr>
+        <tr><td class="k">Order id</td><td class="v">ORD-90177</td></tr>
+        <tr><td class="k">Build id</td><td class="v">build-c20e4d</td></tr>
+        <tr><td class="k">Session token</td><td class="v">sess_31f0c9de</td></tr>
+        <tr><td class="k">Batch label</td><td class="v">BATCH/2026/Q1/233</td></tr>
       </tbody>
     </table>
     <div class="static">
@@ -61,7 +63,7 @@
       content it should not touch.</p>
       <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
     </div>
-    <footer>Percy dynamic-text intelli-ignore fixture &middot; Negative control</footer>
+    <footer>Percy dynamic-text intelli-ignore fixture &middot; Typed-in text and custom text only</footer>
   </div>
 </body>
 </html>

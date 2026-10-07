@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Negative control (variant 2)</title>
+<title>Dates, timestamps and phone numbers only (variant 2)</title>
 <style>
   :root{--ink:#14181f;--mut:#5b6472;--line:#e3e6ea;--bg:#fff;--chip:#f4f6f8;--accent:#2e6ba8}
   *{box-sizing:border-box}
@@ -39,20 +39,35 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Negative control</h1>
-    <p class="sub">A real visual change beside dynamic values.</p>
-    <h2>Genuine visual change</h2>
-    <p>The badge below changes colour and wording between variants. That is a real
-    visual difference and Percy <strong>must still report it</strong> with every dynamic-text
-    rule switched on. A 0% diff here means the rules are swallowing genuine changes.</p>
-    <p><span style="display:inline-block;padding:8px 20px;border-radius:4px;background:#a8384c;color:#fff;font-weight:600">Rejected</span></p>
-    <h2>Dynamic values alongside it</h2>
+    <h1>Dates, timestamps and phone numbers only</h1>
+    <p class="sub">Only these three types appear. Nothing else on the page can be matched.</p>
+    <h2>Dates</h2>
     <table>
       <thead><tr><th>Field</th><th>Value</th></tr></thead>
       <tbody>
         <tr><td class="k">Created on</td><td class="v">27 Mar 2026</td></tr>
-        <tr><td class="k">Amount due</td><td class="v">$3,815.42</td></tr>
-        <tr><td class="k">Snapshots</td><td class="v">1,205</td></tr>
+        <tr><td class="k">ISO date</td><td class="v">2026-03-27</td></tr>
+        <tr><td class="k">Renewal date</td><td class="v">27/03/2026</td></tr>
+        <tr><td class="k">Scheduled</td><td class="v">Friday, 27 March 2026</td></tr>
+      </tbody>
+    </table>
+    <h2>Timestamps</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Duration</td><td class="v">02:13:07</td></tr>
+        <tr><td class="k">Last run</td><td class="v">09:41</td></tr>
+        <tr><td class="k">Window opens</td><td class="v">9:41 AM</td></tr>
+        <tr><td class="k">Render time</td><td class="v">00:00:19.903</td></tr>
+      </tbody>
+    </table>
+    <h2>Phone numbers</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Support line</td><td class="v">(415) 236-1188</td></tr>
+        <tr><td class="k">International</td><td class="v">+44 20 7946 0318</td></tr>
+        <tr><td class="k">Account manager</td><td class="v">+91 99301 54321</td></tr>
       </tbody>
     </table>
     <div class="static">
@@ -61,7 +76,7 @@
       content it should not touch.</p>
       <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
     </div>
-    <footer>Percy dynamic-text intelli-ignore fixture &middot; Negative control</footer>
+    <footer>Percy dynamic-text intelli-ignore fixture &middot; Dates, timestamps and phone numbers only</footer>
   </div>
 </body>
 </html>

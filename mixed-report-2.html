@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Negative control (variant 2)</title>
+<title>Build report (variant 2)</title>
 <style>
   :root{--ink:#14181f;--mut:#5b6472;--line:#e3e6ea;--bg:#fff;--chip:#f4f6f8;--accent:#2e6ba8}
   *{box-sizing:border-box}
@@ -39,29 +39,42 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Negative control</h1>
-    <p class="sub">A real visual change beside dynamic values.</p>
-    <h2>Genuine visual change</h2>
-    <p>The badge below changes colour and wording between variants. That is a real
-    visual difference and Percy <strong>must still report it</strong> with every dynamic-text
-    rule switched on. A 0% diff here means the rules are swallowing genuine changes.</p>
-    <p><span style="display:inline-block;padding:8px 20px;border-radius:4px;background:#a8384c;color:#fff;font-weight:600">Rejected</span></p>
-    <h2>Dynamic values alongside it</h2>
+    <h1>Build report</h1>
+    <p class="sub">All nine types in a report table layout.</p>
+    <h2>Build</h2>
     <table>
       <thead><tr><th>Field</th><th>Value</th></tr></thead>
       <tbody>
+        <tr><td class="k">Build id</td><td class="v">build-c20e4d</td></tr>
         <tr><td class="k">Created on</td><td class="v">27 Mar 2026</td></tr>
-        <tr><td class="k">Amount due</td><td class="v">$3,815.42</td></tr>
+        <tr><td class="k">Duration</td><td class="v">02:13:07</td></tr>
+        <tr><td class="k">Render time</td><td class="v">00:00:19.903</td></tr>
         <tr><td class="k">Snapshots</td><td class="v">1,205</td></tr>
+        <tr><td class="k">Coverage</td><td class="v">18%</td></tr>
       </tbody>
     </table>
+    <h2>Metadata</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Amount due</td><td class="v">$3,815.42</td></tr>
+        <tr><td class="k">Alias</td><td class="v">dana+qa@example.com</td></tr>
+        <tr><td class="k">Support line</td><td class="v">(415) 236-1188</td></tr>
+        <tr><td class="k">Build</td><td class="v">percy.io/projects</td></tr>
+        <tr><td class="k">Batch label</td><td class="v">BATCH/2026/Q1/233</td></tr>
+      </tbody>
+    </table>
+    <h2>Notes</h2>
+    <div class="rows">
+      <div class="row"><label>Reference</label><input type="text" value="REQ-9014" readonly></div>
+    </div>
     <div class="static">
       <p>Static control block — identical in both variants. Any difference reported inside
       this block means an ignore rule has over-matched and is suppressing or shifting
       content it should not touch.</p>
       <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
     </div>
-    <footer>Percy dynamic-text intelli-ignore fixture &middot; Negative control</footer>
+    <footer>Percy dynamic-text intelli-ignore fixture &middot; Build report</footer>
   </div>
 </body>
 </html>
