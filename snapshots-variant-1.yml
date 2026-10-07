@@ -1,7 +1,6 @@
 # Variant 1: baseline capture
 # Snapshot names are identical in both files on purpose, so variant 2 is
 # compared against the variant 1 baseline of the same name.
-version: 2
 snapshots:
   - name: "01 Northwind billing invoice"
     url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/billing-1.html
