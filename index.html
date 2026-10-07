@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Percy dynamic-text ignore test pages</title><style>
+  :root{--ink:#14181f;--mut:#5b6472;--line:#e3e6ea;--bg:#ffffff;--chip:#f4f6f8;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:40px 24px 64px}
+  h1{font-size:28px;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--mut);margin:0 0 28px;font-size:15px}
+  .note{background:var(--chip);border-left:3px solid #9aa4b2;padding:12px 16px;margin:0 0 28px;font-size:14px;color:var(--mut)}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);
+     margin:32px 0 10px;font-weight:600}
+  table{border-collapse:collapse;width:100%;margin:0 0 8px}
+  th{text-align:left;font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+     color:var(--mut);padding:8px 12px;border-bottom:1px solid var(--line);font-weight:600}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.k{color:var(--mut);width:34%}
+  td.v{font-weight:600}
+  .static p{margin:0 0 10px}
+  input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:4px;width:320px;max-width:100%}
+  .row{margin:0 0 12px}
+  .row label{display:block;font-size:13px;color:var(--mut);margin-bottom:4px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+         color:var(--mut);font-size:13px}
+  a{color:#2e6ba8}
+</style></head>
+<body><div class="wrap">
+  <h1>Percy dynamic-text ignore test pages</h1>
+  <p class="sub">Fixtures for PPLT-6133 / PPLT-6174 — dynamic text intelli-ignore at project level.</p>
+  <div class="note">Each page has two variants. Capture <strong>variant 1</strong> as the baseline,
+  then capture <strong>variant 2</strong> under the same snapshot name. Only the dynamic values
+  differ; layout and static text are identical, so with the matching rule enabled the
+  comparison should be 0%, and with it disabled it should be flagged.</div>
+  <table><thead><tr><th>Page</th><th>Variants</th></tr></thead><tbody>
+        <tr><td class="k">Dates</td><td><a href="dates-1.html">variant 1</a> &middot; <a href="dates-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Timestamps</td><td><a href="timestamps-1.html">variant 1</a> &middot; <a href="timestamps-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Phone numbers</td><td><a href="phone-numbers-1.html">variant 1</a> &middot; <a href="phone-numbers-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Prices</td><td><a href="prices-1.html">variant 1</a> &middot; <a href="prices-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Email addresses</td><td><a href="email-addresses-1.html">variant 1</a> &middot; <a href="email-addresses-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Numbers</td><td><a href="numbers-1.html">variant 1</a> &middot; <a href="numbers-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Links</td><td><a href="links-1.html">variant 1</a> &middot; <a href="links-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Typed-in text</td><td><a href="typed-in-text-1.html">variant 1</a> &middot; <a href="typed-in-text-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Custom text</td><td><a href="custom-text-1.html">variant 1</a> &middot; <a href="custom-text-2.html">variant 2</a></td></tr>
+        <tr><td class="k">All types on one page</td><td><a href="mixed-all-types-1.html">variant 1</a> &middot; <a href="mixed-all-types-2.html">variant 2</a></td></tr>
+        <tr><td class="k">Negative control</td><td><a href="negative-control-1.html">variant 1</a> &middot; <a href="negative-control-2.html">variant 2</a></td></tr>
+  </tbody></table>
+  <footer>Static fixtures, no JavaScript, no external assets.</footer>
+</div></body></html>

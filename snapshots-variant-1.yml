@@ -1,0 +1,47 @@
+# Percy dynamic-text ignore — variant 1
+# Snapshot NAMES are identical in both files on purpose: variant 2 is
+# compared against variant 1 as its baseline.
+
+- name: Dates
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/dates-1.html
+  waitForTimeout: 2000
+
+- name: Timestamps
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/timestamps-1.html
+  waitForTimeout: 2000
+
+- name: Phone numbers
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/phone-numbers-1.html
+  waitForTimeout: 2000
+
+- name: Prices
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/prices-1.html
+  waitForTimeout: 2000
+
+- name: Email addresses
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/email-addresses-1.html
+  waitForTimeout: 2000
+
+- name: Numbers
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/numbers-1.html
+  waitForTimeout: 2000
+
+- name: Links
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/links-1.html
+  waitForTimeout: 2000
+
+- name: Typed-in text
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/typed-in-text-1.html
+  waitForTimeout: 2000
+
+- name: Custom text
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/custom-text-1.html
+  waitForTimeout: 2000
+
+- name: All types
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-all-types-1.html
+  waitForTimeout: 2000
+
+- name: Negative control
+  url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/negative-control-1.html
+  waitForTimeout: 2000
