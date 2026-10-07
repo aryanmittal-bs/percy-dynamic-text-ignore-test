@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Percy dynamic text ignore fixtures</title>
+<title>Hallow & Co Order (variant 1)</title>
 <style>
-:root{--brand:#4f46e5}
+:root{--brand:#0f766e}
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -198,31 +198,51 @@ input[type=text],textarea{width:100%;font:inherit;color:#0f172a;background:#fff;
 </head>
 <body>
   <header class="nav"><div class="nav-in">
-    <div class="brand"><span class="mark">P</span>Percy fixtures</div>
-    <nav class="nav-links"><a href="#" class="on">Pages</a><a href="#">Capture</a></nav>
-    <div class="nav-right"><a class="btn btn-ghost" href="#">Repo</a><div class="avatar">AM</div></div>
+    <div class="brand"><span class="mark">H</span>Hallow &amp; Co</div>
+    <div class="searchbar"><input type="text" value="merino crew sweater" readonly></div>
+    <div class="nav-right"><a class="btn btn-ghost" href="#">4 items</a><div class="avatar">SC</div></div>
   </div></header>
   <div class="wrap">
-    <div class="page-head"><div><h1>Dynamic text ignore fixtures</h1><p class="lede">Five production style pages, two variants each, captured at 375 and 1280.</p></div></div>
-    <div class="card">
-      <table class="tbl">
-        <thead><tr><th>Page</th><th class="r">Variants</th></tr></thead>
-        <tbody>
-        <tr><td><strong>01 Northwind billing invoice</strong><div class="sub">SaaS invoice: prices, dates, emails, phone, ids, counts</div></td><td class="r"><a href="billing-1.html">variant 1</a> &middot; <a href="billing-2.html">variant 2</a></td></tr>
-        <tr><td><strong>02 Hallow and Co order confirmation</strong><div class="sub">Ecommerce confirmation: order id, prices, delivery dates, tracking, typed search</div></td><td class="r"><a href="order-1.html">variant 1</a> &middot; <a href="order-2.html">variant 2</a></td></tr>
-        <tr><td><strong>03 Meridian Air itinerary</strong><div class="sub">Flight booking: dates, times, durations, fares, contact details, reference</div></td><td class="r"><a href="itinerary-1.html">variant 1</a> &middot; <a href="itinerary-2.html">variant 2</a></td></tr>
-        <tr><td><strong>04 Pulse analytics overview</strong><div class="sub">Metrics dashboard: counts, percentages, revenue, timestamps, date range, report name</div></td><td class="r"><a href="analytics-1.html">variant 1</a> &middot; <a href="analytics-2.html">variant 2</a></td></tr>
-        <tr><td><strong>05 Relay helpdesk ticket</strong><div class="sub">Helpdesk ticket: ticket id, SLA timer, emails, phone, typed reply, linked ids</div></td><td class="r"><a href="support-1.html">variant 1</a> &middot; <a href="support-2.html">variant 2</a></td></tr>
-        </tbody>
-      </table>
+    <div class="banner">
+      <div><div class="big">Order confirmed</div><p class="lede">Order ORD-48213-9X placed on 10 Jan 2025 at 2:05 PM</p></div>
+      <div class="right"><span class="pill pill-ok">Preparing to ship</span><div class="sub">Arrives Tue, 14 Jan</div></div>
     </div>
+    <div class="cols">
+      <section>
+        <div class="card">
+          <div class="card-head"><h2>Items in this order</h2><span class="muted">4 items</span></div>
+          <div class="prod"><div class="thumb">KNIT</div><div><strong>Merino crew sweater</strong><div class="sub">Oatmeal &middot; Medium &middot; Qty 1</div></div><div class="price mono">$129.00</div></div>
+          <div class="prod"><div class="thumb">SHIRT</div><div><strong>Oxford cotton shirt</strong><div class="sub">Pale blue &middot; 15.5 &middot; Qty 2</div></div><div class="price mono">$78.00</div></div>
+          <div class="prod"><div class="thumb">BELT</div><div><strong>Bridle leather belt</strong><div class="sub">Chestnut &middot; 34 &middot; Qty 1</div></div><div class="price mono">$52.00</div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Delivery</h2><span class="muted">Tuesday, 14 January 2025</span></div>
+          <div class="kv"><span>Recipient</span><strong>Sam Carter, 118 Granby Row, Manchester M1 7JE</strong></div>
+          <div class="kv"><span>Phone</span><strong>(855) 807-0572</strong></div>
+          <div class="kv"><span>Updates to</span><strong>sam@example.com</strong></div>
+          <div class="kv"><span>Tracking</span><strong>1Z-9F3A-4471 &middot; <a href="#">hallowco.com/track</a></strong></div>
+        </div>
+      </section>
+      <aside>
+        <div class="card">
+          <div class="card-head"><h2>Order summary</h2></div>
+          <table class="tbl"><tbody>
+            <tr><td>Subtotal</td><td class="r mono">$259.00</td></tr>
+            <tr><td>Shipping</td><td class="r mono">$12.00</td></tr>
+            <tr><td>Tax</td><td class="r mono">$13.90</td></tr>
+          </tbody><tfoot><tr class="total"><td class="r">Total</td><td class="r mono">$284.90</td></tr></tfoot></table>
+          <div class="sub" style="margin-top:12px">You earned 1,240 points on this order.</div>
+        </div>
       <div class="control">
         <p>Static control block, identical in both variants. A difference reported inside
         this block means an ignore rule has over-matched and is suppressing or shifting
         content it should not touch.</p>
         <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
       </div>
-    <footer class="foot">Only the values differ between variants. Layout, labels and copy are identical, and the variant number appears only in the page title, which is not captured.</footer>
+      </aside>
+    </div>
+    <footer class="foot">Need help with order ORD-48213-9X? Write to <a href="#">sam@example.com</a> or call <a href="#">(855) 807-0572</a>.</footer>
   </div>
+
 </body>
 </html>

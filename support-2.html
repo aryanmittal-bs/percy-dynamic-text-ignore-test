@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Percy dynamic text ignore fixtures</title>
+<title>Relay Helpdesk Ticket (variant 2)</title>
 <style>
-:root{--brand:#4f46e5}
+:root{--brand:#be123c}
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -197,32 +197,65 @@ input[type=text],textarea{width:100%;font:inherit;color:#0f172a;background:#fff;
 </style>
 </head>
 <body>
-  <header class="nav"><div class="nav-in">
-    <div class="brand"><span class="mark">P</span>Percy fixtures</div>
-    <nav class="nav-links"><a href="#" class="on">Pages</a><a href="#">Capture</a></nav>
-    <div class="nav-right"><a class="btn btn-ghost" href="#">Repo</a><div class="avatar">AM</div></div>
-  </div></header>
-  <div class="wrap">
-    <div class="page-head"><div><h1>Dynamic text ignore fixtures</h1><p class="lede">Five production style pages, two variants each, captured at 375 and 1280.</p></div></div>
-    <div class="card">
-      <table class="tbl">
-        <thead><tr><th>Page</th><th class="r">Variants</th></tr></thead>
-        <tbody>
-        <tr><td><strong>01 Northwind billing invoice</strong><div class="sub">SaaS invoice: prices, dates, emails, phone, ids, counts</div></td><td class="r"><a href="billing-1.html">variant 1</a> &middot; <a href="billing-2.html">variant 2</a></td></tr>
-        <tr><td><strong>02 Hallow and Co order confirmation</strong><div class="sub">Ecommerce confirmation: order id, prices, delivery dates, tracking, typed search</div></td><td class="r"><a href="order-1.html">variant 1</a> &middot; <a href="order-2.html">variant 2</a></td></tr>
-        <tr><td><strong>03 Meridian Air itinerary</strong><div class="sub">Flight booking: dates, times, durations, fares, contact details, reference</div></td><td class="r"><a href="itinerary-1.html">variant 1</a> &middot; <a href="itinerary-2.html">variant 2</a></td></tr>
-        <tr><td><strong>04 Pulse analytics overview</strong><div class="sub">Metrics dashboard: counts, percentages, revenue, timestamps, date range, report name</div></td><td class="r"><a href="analytics-1.html">variant 1</a> &middot; <a href="analytics-2.html">variant 2</a></td></tr>
-        <tr><td><strong>05 Relay helpdesk ticket</strong><div class="sub">Helpdesk ticket: ticket id, SLA timer, emails, phone, typed reply, linked ids</div></td><td class="r"><a href="support-1.html">variant 1</a> &middot; <a href="support-2.html">variant 2</a></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="shell">
+    <aside class="side">
+      <div class="brand"><span class="mark">R</span>Relay</div>
+      <div class="sect">Inbox</div>
+      <nav><a class="on" href="#">Assigned to me</a><a href="#">Unassigned</a><a href="#">Escalated</a><a href="#">Closed</a></nav>
+      <div class="sect">Views</div>
+      <nav><a href="#">Billing</a><a href="#">Integrations</a><a href="#">Platform</a></nav>
+    </aside>
+    <main class="side-main">
+      <div class="page-head">
+        <div>
+          <div class="crumb">Assigned to me / TCK-90177</div>
+          <h1>Snapshot upload times out on large builds</h1>
+          <p class="lede">TCK-90177 opened 27 Mar 2026 &middot; 17 replies</p>
+        </div>
+        <div class="head-actions"><span class="pill pill-hot">Breaching SLA</span><a class="btn btn-ghost" href="#">Escalate</a><a class="btn" href="#">Resolve</a></div>
+      </div>
+      <div class="grid-3">
+        <div class="card stat"><div class="stat-l">Time to SLA</div><div class="stat-v mono">02:13:07</div><div class="stat-s">First response 09:41</div></div>
+        <div class="card stat"><div class="stat-l">Account value</div><div class="stat-v mono">$312,940 ARR</div><div class="stat-s">Renews on 27 Mar 2026</div></div>
+        <div class="card stat"><div class="stat-l">Queue</div><div class="stat-v mono">48 open</div><div class="stat-s">Assigned to you</div></div>
+      </div>
+      <div class="cols">
+        <section>
+          <div class="card">
+            <div class="card-head"><h2>Conversation</h2><span class="muted">17 replies</span></div>
+            <div class="msg"><div class="ava-sm">C</div><div><div class="who">Dana Olsen</div><div class="body">Uploads keep timing out once a build goes past a few hundred snapshots. Reference build-c20e4d on our side.</div></div><span class="when">27 Mar, 07:58</span></div>
+            <div class="msg"><div class="ava-sm">SC</div><div><div class="who">Support</div><div class="body">Thanks for the detail. I can see session sess_31f0c9de against that build. Pulling the upload logs now.</div></div><span class="when">27 Mar, 08:30</span></div>
+            <div class="msg"><div class="ava-sm">C</div><div><div class="who">Dana Olsen</div><div class="body">Appreciated. You can reach me on +91 99301 54321 if that is faster.</div></div><span class="when">27 Mar, 09:12</span></div>
+            <div class="field" style="margin-top:16px"><label>Your reply</label><textarea rows="3" readonly>Rechecking the failed upload</textarea></div>
+            <div class="head-actions" style="margin-left:0"><a class="btn btn-ghost" href="#">Save draft</a><a class="btn" href="#">Send reply</a></div>
+          </div>
+        </section>
+        <aside>
+          <div class="card">
+            <div class="card-head"><h2>Customer</h2></div>
+            <div class="kv"><span>Name</span><strong>Dana Olsen</strong></div>
+            <div class="kv"><span>Email</span><strong>dana.olsen@example.com</strong></div>
+            <div class="kv"><span>Phone</span><strong>+91 99301 54321</strong></div>
+            <div class="kv"><span>Plan</span><strong>$3,815.42 / yr</strong></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h2>Linked records</h2></div>
+            <div class="kv"><span>Order</span><strong>ORD-90177-4K</strong></div>
+            <div class="kv"><span>Build</span><strong>build-c20e4d</strong></div>
+            <div class="kv"><span>Session</span><strong>sess_31f0c9de</strong></div>
+            <div class="kv"><span>Ticket link</span><strong><a href="#">relay.app/t/90177</a></strong></div>
+          </div>
       <div class="control">
         <p>Static control block, identical in both variants. A difference reported inside
         this block means an ignore rule has over-matched and is suppressing or shifting
         content it should not touch.</p>
         <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
       </div>
-    <footer class="foot">Only the values differ between variants. Layout, labels and copy are identical, and the variant number appears only in the page title, which is not captured.</footer>
+        </aside>
+      </div>
+      <footer class="foot">Replies are sent from <a href="#">helpdesk@relay.app</a>. Ticket TCK-90177 opened 27 Mar 2026.</footer>
+    </main>
   </div>
+
 </body>
 </html>

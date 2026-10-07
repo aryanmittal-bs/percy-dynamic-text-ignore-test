@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Percy dynamic text ignore fixtures</title>
+<title>Meridian Air Itinerary (variant 1)</title>
 <style>
-:root{--brand:#4f46e5}
+:root{--brand:#1d4ed8}
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -198,31 +198,67 @@ input[type=text],textarea{width:100%;font:inherit;color:#0f172a;background:#fff;
 </head>
 <body>
   <header class="nav"><div class="nav-in">
-    <div class="brand"><span class="mark">P</span>Percy fixtures</div>
-    <nav class="nav-links"><a href="#" class="on">Pages</a><a href="#">Capture</a></nav>
-    <div class="nav-right"><a class="btn btn-ghost" href="#">Repo</a><div class="avatar">AM</div></div>
+    <div class="brand"><span class="mark">M</span>Meridian Air</div>
+    <nav class="nav-links"><a href="#">Book</a><a href="#" class="on">My trips</a><a href="#">Check in</a><a href="#">Status</a><a href="#">Help</a></nav>
+    <div class="nav-right"><a class="btn btn-ghost" href="#">Manage</a><div class="avatar">SC</div></div>
   </div></header>
   <div class="wrap">
-    <div class="page-head"><div><h1>Dynamic text ignore fixtures</h1><p class="lede">Five production style pages, two variants each, captured at 375 and 1280.</p></div></div>
-    <div class="card">
-      <table class="tbl">
-        <thead><tr><th>Page</th><th class="r">Variants</th></tr></thead>
-        <tbody>
-        <tr><td><strong>01 Northwind billing invoice</strong><div class="sub">SaaS invoice: prices, dates, emails, phone, ids, counts</div></td><td class="r"><a href="billing-1.html">variant 1</a> &middot; <a href="billing-2.html">variant 2</a></td></tr>
-        <tr><td><strong>02 Hallow and Co order confirmation</strong><div class="sub">Ecommerce confirmation: order id, prices, delivery dates, tracking, typed search</div></td><td class="r"><a href="order-1.html">variant 1</a> &middot; <a href="order-2.html">variant 2</a></td></tr>
-        <tr><td><strong>03 Meridian Air itinerary</strong><div class="sub">Flight booking: dates, times, durations, fares, contact details, reference</div></td><td class="r"><a href="itinerary-1.html">variant 1</a> &middot; <a href="itinerary-2.html">variant 2</a></td></tr>
-        <tr><td><strong>04 Pulse analytics overview</strong><div class="sub">Metrics dashboard: counts, percentages, revenue, timestamps, date range, report name</div></td><td class="r"><a href="analytics-1.html">variant 1</a> &middot; <a href="analytics-2.html">variant 2</a></td></tr>
-        <tr><td><strong>05 Relay helpdesk ticket</strong><div class="sub">Helpdesk ticket: ticket id, SLA timer, emails, phone, typed reply, linked ids</div></td><td class="r"><a href="support-1.html">variant 1</a> &middot; <a href="support-2.html">variant 2</a></td></tr>
-        </tbody>
-      </table>
+    <div class="page-head">
+      <div>
+        <div class="crumb">My trips / Booking MX7Q4D</div>
+        <h1>Manchester to Lisbon</h1>
+        <p class="lede">Booking reference MX7Q4D &middot; ticket TKT-7F3A9104</p>
+      </div>
+      <div class="head-actions"><span class="pill pill-info">Confirmed</span><a class="btn btn-ghost" href="#">Change flight</a><a class="btn" href="#">Check in</a></div>
     </div>
+    <div class="cols">
+      <section>
+        <div class="card">
+          <div class="card-head"><h2>Outbound</h2><span class="muted">Fri, 10 Jan 2025</span></div>
+          <div class="seg">
+            <div class="end"><div class="code">MAN</div><div class="city">Manchester</div><div class="time mono">14:05</div></div>
+            <div class="mid"><div class="meta">MA 418</div><div class="line"></div><div class="meta">3h 15m &middot; non-stop</div></div>
+            <div class="end"><div class="code">LIS</div><div class="city">Lisbon</div><div class="time mono">17:20</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Return</h2><span class="muted">Sun, 19 Jan 2025</span></div>
+          <div class="seg">
+            <div class="end"><div class="code">LIS</div><div class="city">Lisbon</div><div class="time mono">19:40</div></div>
+            <div class="mid"><div class="meta">MA 629</div><div class="line"></div><div class="meta">2h 32m &middot; non-stop</div></div>
+            <div class="end"><div class="code">MAN</div><div class="city">Manchester</div><div class="time mono">22:12</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Passenger and contact</h2></div>
+          <div class="kv"><span>Passenger</span><strong>Sam Carter</strong></div>
+          <div class="kv"><span>Email</span><strong>sam.carter@example.com</strong></div>
+          <div class="kv"><span>Mobile</span><strong>+1 855 807 0572</strong></div>
+          <div class="kv"><span>Seats</span><strong>14A outbound, 22F return</strong></div>
+          <div class="kv"><span>Baggage</span><strong>2 x 23 kg checked</strong></div>
+          <div class="kv"><span>Check in opens</span><strong>10 Jan 2025, 12:05</strong></div>
+        </div>
+      </section>
+      <aside>
+        <div class="card">
+          <div class="card-head"><h2>Fare breakdown</h2></div>
+          <table class="tbl"><tbody>
+            <tr><td>Base fare</td><td class="r mono">$412.00</td></tr>
+            <tr><td>Taxes and fees</td><td class="r mono">$88.40</td></tr>
+            <tr><td>Seat selection</td><td class="r mono">$36.00</td></tr>
+            <tr><td>Checked baggage</td><td class="r mono">$45.00</td></tr>
+          </tbody><tfoot><tr class="total"><td class="r">Total paid</td><td class="r mono">$581.40</td></tr></tfoot></table>
+        </div>
       <div class="control">
         <p>Static control block, identical in both variants. A difference reported inside
         this block means an ignore rule has over-matched and is suppressing or shifting
         content it should not touch.</p>
         <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
       </div>
-    <footer class="foot">Only the values differ between variants. Layout, labels and copy are identical, and the variant number appears only in the page title, which is not captured.</footer>
+      </aside>
+    </div>
+    <footer class="foot">Manage booking MX7Q4D at <a href="#">meridianair.com/manage</a>, or call <a href="#">+1 855 807 0572</a>.</footer>
   </div>
+
 </body>
 </html>

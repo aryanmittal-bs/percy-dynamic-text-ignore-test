@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Percy dynamic text ignore fixtures</title>
+<title>Northwind Billing (variant 2)</title>
 <style>
 :root{--brand:#4f46e5}
 
@@ -198,31 +198,69 @@ input[type=text],textarea{width:100%;font:inherit;color:#0f172a;background:#fff;
 </head>
 <body>
   <header class="nav"><div class="nav-in">
-    <div class="brand"><span class="mark">P</span>Percy fixtures</div>
-    <nav class="nav-links"><a href="#" class="on">Pages</a><a href="#">Capture</a></nav>
-    <div class="nav-right"><a class="btn btn-ghost" href="#">Repo</a><div class="avatar">AM</div></div>
+    <div class="brand"><span class="mark">N</span>Northwind</div>
+    <nav class="nav-links"><a href="#">Overview</a><a href="#">Usage</a><a href="#" class="on">Billing</a><a href="#">Team</a><a href="#">Settings</a></nav>
+    <div class="nav-right"><a class="btn btn-ghost" href="#">Docs</a><div class="avatar">SC</div></div>
   </div></header>
   <div class="wrap">
-    <div class="page-head"><div><h1>Dynamic text ignore fixtures</h1><p class="lede">Five production style pages, two variants each, captured at 375 and 1280.</p></div></div>
-    <div class="card">
-      <table class="tbl">
-        <thead><tr><th>Page</th><th class="r">Variants</th></tr></thead>
-        <tbody>
-        <tr><td><strong>01 Northwind billing invoice</strong><div class="sub">SaaS invoice: prices, dates, emails, phone, ids, counts</div></td><td class="r"><a href="billing-1.html">variant 1</a> &middot; <a href="billing-2.html">variant 2</a></td></tr>
-        <tr><td><strong>02 Hallow and Co order confirmation</strong><div class="sub">Ecommerce confirmation: order id, prices, delivery dates, tracking, typed search</div></td><td class="r"><a href="order-1.html">variant 1</a> &middot; <a href="order-2.html">variant 2</a></td></tr>
-        <tr><td><strong>03 Meridian Air itinerary</strong><div class="sub">Flight booking: dates, times, durations, fares, contact details, reference</div></td><td class="r"><a href="itinerary-1.html">variant 1</a> &middot; <a href="itinerary-2.html">variant 2</a></td></tr>
-        <tr><td><strong>04 Pulse analytics overview</strong><div class="sub">Metrics dashboard: counts, percentages, revenue, timestamps, date range, report name</div></td><td class="r"><a href="analytics-1.html">variant 1</a> &middot; <a href="analytics-2.html">variant 2</a></td></tr>
-        <tr><td><strong>05 Relay helpdesk ticket</strong><div class="sub">Helpdesk ticket: ticket id, SLA timer, emails, phone, typed reply, linked ids</div></td><td class="r"><a href="support-1.html">variant 1</a> &middot; <a href="support-2.html">variant 2</a></td></tr>
-        </tbody>
-      </table>
+    <div class="page-head">
+      <div>
+        <div class="crumb">Billing / Invoices / INV-2026-0973</div>
+        <h1>Invoice INV-2026-0973</h1>
+        <p class="lede">Issued 27 Mar 2026 &middot; due 26 Apr 2026</p>
+      </div>
+      <div class="head-actions"><span class="pill pill-warn">Payment due</span><a class="btn btn-ghost" href="#">Download PDF</a><a class="btn" href="#">Pay now</a></div>
     </div>
+    <div class="grid-3">
+      <div class="card stat"><div class="stat-l">Amount due</div><div class="stat-v mono">$3,815.42</div><div class="stat-s">Due 26 Apr</div></div>
+      <div class="card stat"><div class="stat-l">Previous balance</div><div class="stat-v mono">$2,164.90</div><div class="stat-s">Paid 03 Mar 2026</div></div>
+      <div class="card stat"><div class="stat-l">Snapshots used</div><div class="stat-v mono">1,205,774</div><div class="stat-s">18% of plan allowance</div></div>
+    </div>
+    <div class="cols">
+      <section>
+        <div class="card">
+          <div class="card-head"><h2>Line items</h2><span class="muted">1 Mar - 31 Mar 2026</span></div>
+          <table class="tbl">
+            <thead><tr><th>Description</th><th class="r">Qty</th><th class="r">Unit</th><th class="r">Amount</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Team plan</strong><div class="sub">Billed monthly</div></td><td class="r mono">1</td><td class="r mono">$880.00</td><td class="r mono">$880.00</td></tr>
+              <tr><td><strong>Snapshot overage</strong><div class="sub">Beyond plan allowance</div></td><td class="r mono">257,300</td><td class="r mono">$0.009</td><td class="r mono">$2,315.70</td></tr>
+              <tr><td><strong>Additional seats</strong><div class="sub">Prorated for the period</div></td><td class="r mono">17</td><td class="r mono">$24.00</td><td class="r mono">$408.00</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="3" class="r">Subtotal</td><td class="r mono">$3,603.70</td></tr>
+              <tr><td colspan="3" class="r">Tax</td><td class="r mono">$211.72</td></tr>
+              <tr class="total"><td colspan="3" class="r">Total due</td><td class="r mono">$3,815.42</td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Recent payments</h2></div>
+          <ul class="feed">
+            <li><div><strong class="mono">$2,164.90</strong><div class="sub">Visa ending 4242</div></div><span class="when">03 Mar 2026</span></li>
+            <li><div><strong class="mono">$1,877.05</strong><div class="sub">Visa ending 4242</div></div><span class="when">03 Feb 2026</span></li>
+            <li><div><strong class="mono">$1,654.20</strong><div class="sub">Visa ending 4242</div></div><span class="when">03 Jan 2026</span></li>
+          </ul>
+        </div>
+      </section>
+      <aside>
+        <div class="card">
+          <div class="card-head"><h2>Billed to</h2></div>
+          <div class="kv"><span>Company</span><strong>Northwind Labs Inc.</strong></div>
+          <div class="kv"><span>Contact</span><strong>dana.olsen@northwind.co</strong></div>
+          <div class="kv"><span>Phone</span><strong>(415) 236-1188</strong></div>
+          <div class="kv"><span>Account</span><strong>ACC-C20E4D88</strong></div>
+        </div>
       <div class="control">
         <p>Static control block, identical in both variants. A difference reported inside
         this block means an ignore rule has over-matched and is suppressing or shifting
         content it should not touch.</p>
         <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
       </div>
-    <footer class="foot">Only the values differ between variants. Layout, labels and copy are identical, and the variant number appears only in the page title, which is not captured.</footer>
+      </aside>
+    </div>
+    <footer class="foot">Questions about this invoice? Email <a href="#">accounts@northwind.co</a> or call <a href="#">+44 20 7946 0318</a>. Billing docs at <a href="#">northwind.co/help/invoices</a>.</footer>
   </div>
+
 </body>
 </html>

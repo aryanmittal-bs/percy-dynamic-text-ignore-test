@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Percy dynamic text ignore fixtures</title>
+<title>Pulse Analytics (variant 1)</title>
 <style>
-:root{--brand:#4f46e5}
+:root{--brand:#7c3aed}
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -197,32 +197,71 @@ input[type=text],textarea{width:100%;font:inherit;color:#0f172a;background:#fff;
 </style>
 </head>
 <body>
-  <header class="nav"><div class="nav-in">
-    <div class="brand"><span class="mark">P</span>Percy fixtures</div>
-    <nav class="nav-links"><a href="#" class="on">Pages</a><a href="#">Capture</a></nav>
-    <div class="nav-right"><a class="btn btn-ghost" href="#">Repo</a><div class="avatar">AM</div></div>
-  </div></header>
-  <div class="wrap">
-    <div class="page-head"><div><h1>Dynamic text ignore fixtures</h1><p class="lede">Five production style pages, two variants each, captured at 375 and 1280.</p></div></div>
-    <div class="card">
-      <table class="tbl">
-        <thead><tr><th>Page</th><th class="r">Variants</th></tr></thead>
-        <tbody>
-        <tr><td><strong>01 Northwind billing invoice</strong><div class="sub">SaaS invoice: prices, dates, emails, phone, ids, counts</div></td><td class="r"><a href="billing-1.html">variant 1</a> &middot; <a href="billing-2.html">variant 2</a></td></tr>
-        <tr><td><strong>02 Hallow and Co order confirmation</strong><div class="sub">Ecommerce confirmation: order id, prices, delivery dates, tracking, typed search</div></td><td class="r"><a href="order-1.html">variant 1</a> &middot; <a href="order-2.html">variant 2</a></td></tr>
-        <tr><td><strong>03 Meridian Air itinerary</strong><div class="sub">Flight booking: dates, times, durations, fares, contact details, reference</div></td><td class="r"><a href="itinerary-1.html">variant 1</a> &middot; <a href="itinerary-2.html">variant 2</a></td></tr>
-        <tr><td><strong>04 Pulse analytics overview</strong><div class="sub">Metrics dashboard: counts, percentages, revenue, timestamps, date range, report name</div></td><td class="r"><a href="analytics-1.html">variant 1</a> &middot; <a href="analytics-2.html">variant 2</a></td></tr>
-        <tr><td><strong>05 Relay helpdesk ticket</strong><div class="sub">Helpdesk ticket: ticket id, SLA timer, emails, phone, typed reply, linked ids</div></td><td class="r"><a href="support-1.html">variant 1</a> &middot; <a href="support-2.html">variant 2</a></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="shell">
+    <aside class="side">
+      <div class="brand"><span class="mark">P</span>Pulse</div>
+      <div class="sect">Analyse</div>
+      <nav><a class="on" href="#">Overview</a><a href="#">Builds</a><a href="#">Snapshots</a><a href="#">Reviewers</a><a href="#">Revenue</a></nav>
+      <div class="sect">Account</div>
+      <nav><a href="#">Projects</a><a href="#">Members</a><a href="#">Settings</a></nav>
+    </aside>
+    <main class="side-main">
+      <div class="page-head">
+        <div>
+          <h1>Overview</h1>
+          <p class="lede">1 Jan - 31 Jan 2025 &middot; last updated 10 Jan 2025, 14:05</p>
+        </div>
+        <div class="head-actions"><a class="btn btn-ghost" href="#">1 Jan - 31 Jan 2025</a><a class="btn" href="#">Export</a></div>
+      </div>
+      <div class="grid-4">
+        <div class="card stat"><div class="stat-l">Builds</div><div class="stat-v mono">12,480</div><div class="stat-s"><span class="trend-up">+8.4%</span> vs previous</div></div>
+        <div class="card stat"><div class="stat-l">Snapshots</div><div class="stat-v mono">48,210</div><div class="stat-s"><span class="trend-up">+12.0%</span> vs previous</div></div>
+        <div class="card stat"><div class="stat-l">Revenue</div><div class="stat-v mono">$84,120</div><div class="stat-s"><span class="trend-up">+5.2%</span> vs previous</div></div>
+        <div class="card stat"><div class="stat-l">Reviewed</div><div class="stat-v mono">3 of 20</div><div class="stat-s">64% of builds</div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Snapshots per day</h2><span class="muted">1 Jan - 31 Jan 2025</span></div>
+        <div class="chart">
+        <div class="col"><div class="bar" style="height:58px"></div><div class="cap">01 Jan</div></div>
+        <div class="col"><div class="bar" style="height:92px"></div><div class="cap">05 Jan</div></div>
+        <div class="col"><div class="bar" style="height:71px"></div><div class="cap">09 Jan</div></div>
+        <div class="col"><div class="bar" style="height:118px"></div><div class="cap">13 Jan</div></div>
+        <div class="col"><div class="bar" style="height:86px"></div><div class="cap">17 Jan</div></div>
+        <div class="col"><div class="bar" style="height:134px"></div><div class="cap">21 Jan</div></div>
+        <div class="col"><div class="bar" style="height:104px"></div><div class="cap">25 Jan</div></div>
+        </div>
+      </div>
+      <div class="cols-even">
+        <div class="card">
+          <div class="card-head"><h2>Recent events</h2><span class="muted">run-7f3a91</span></div>
+          <table class="tbl">
+            <thead><tr><th>Event</th><th class="r">Count</th><th class="r">Time</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Snapshots uploaded</strong><div class="sub">sam@example.com</div></td><td class="r mono">482</td><td class="r mono">14:05:22</td></tr>
+              <tr><td><strong>Builds approved</strong><div class="sub">ci@example.com</div></td><td class="r mono">64</td><td class="r mono">13:48:10</td></tr>
+              <tr><td><strong>Comparisons run</strong><div class="sub">sam+percy@example.com</div></td><td class="r mono">1,205</td><td class="r mono">12:19:04</td></tr>
+              <tr><td><strong>Changes requested</strong><div class="sub">ops@example.com</div></td><td class="r mono">12</td><td class="r mono">11:02:37</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-head"><h2>Saved report</h2></div>
+            <div class="field"><label>Report name</label><input type="text" value="upload timeout" readonly></div>
+            <div class="kv"><span>Period</span><strong>1 Jan - 31 Jan 2025</strong></div>
+            <div class="kv"><span>Share link</span><strong><a href="#">pulse.app/reports/jan</a></strong></div>
+            <div class="kv"><span>Run id</span><strong>run-7f3a91</strong></div>
+          </div>
       <div class="control">
         <p>Static control block, identical in both variants. A difference reported inside
         this block means an ignore rule has over-matched and is suppressing or shifting
         content it should not touch.</p>
         <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.</p>
       </div>
-    <footer class="foot">Only the values differ between variants. Layout, labels and copy are identical, and the variant number appears only in the page title, which is not captured.</footer>
+        </div>
+      </div>
+    </main>
   </div>
+
 </body>
 </html>

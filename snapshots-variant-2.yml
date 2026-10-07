@@ -1,24 +1,20 @@
-# Variant 2 - changed values
-# Snapshot NAMES are identical in both files on purpose: variant 2 is
-# compared against the variant 1 baseline snapshot of the same name.
+# Variant 2: changed values
+# Snapshot names are identical in both files on purpose, so variant 2 is
+# compared against the variant 1 baseline of the same name.
+version: 2
 snapshots:
-  - name: "01 Mixed - Account dashboard"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-dashboard-2.html
-  - name: "02 Mixed - Invoice"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-invoice-2.html
-  - name: "03 Mixed - User profile"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-profile-2.html
-  - name: "04 Mixed - Build report"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-report-2.html
-  - name: "05 Mixed - Activity feed"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/mixed-feed-2.html
-  - name: "06 Focus - Dates, timestamps, phones"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-dates-timestamps-phones-2.html
-  - name: "07 Focus - Prices and numbers"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-prices-numbers-2.html
-  - name: "08 Focus - Emails and links"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-emails-links-2.html
-  - name: "09 Focus - Typed-in and custom text"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/focus-typed-custom-2.html
-  - name: "10 Negative control"
-    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/negative-control-2.html
+  - name: "01 Northwind billing invoice"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/billing-2.html
+    widths: [375, 1280]
+  - name: "02 Hallow and Co order confirmation"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/order-2.html
+    widths: [375, 1280]
+  - name: "03 Meridian Air itinerary"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/itinerary-2.html
+    widths: [375, 1280]
+  - name: "04 Pulse analytics overview"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/analytics-2.html
+    widths: [375, 1280]
+  - name: "05 Relay helpdesk ticket"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/support-2.html
+    widths: [375, 1280]
