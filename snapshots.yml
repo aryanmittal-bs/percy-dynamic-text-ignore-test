@@ -1,0 +1,6 @@
+# Baseline and changed captures must use this SAME file so the snapshot name
+# matches and the two builds compare against each other.
+snapshots:
+  - name: "Northwind billing console"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/
+    widths: [375, 1280]
