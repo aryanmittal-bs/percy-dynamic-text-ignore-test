@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Custom regex fixture: common-.{1,50}$</title>
+<!--
+  ============================================================================
+  CUSTOM TEXT REGEX FIXTURE      regex:  common-.{1,50}$
+  ============================================================================
+  Five samples. Each keeps its OWN fixed font, size, weight, style and colour
+  on every load. Only the TEXT and its LENGTH change.
+
+  Sample 1  gold      very large, bold
+  Sample 2  red       large
+  Sample 3  cyan      italic
+  Sample 4  lime      heavy bold, smaller
+  Sample 5  magenta   cursive, small
+
+  Suffix lengths are drawn from different bands so short and long cases are
+  both on the page every time, including the 1 and 50 character boundaries.
+
+  The background is a FIXED set of gradients. Nothing about it is random and
+  nothing animates, so it can never produce a difference of its own.
+
+  ?static=1 switches randomising off and shows the values written in the HTML.
+  ============================================================================
+-->
+<style>
+:root{
+  --ink:#f3f5ff;
+  --mut:#9aa3c4;
+  --gold:#ffd23f;
+  --red:#ff4d6d;
+  --cyan:#4dd8ff;
+  --lime:#9bff4d;
+  --magenta:#ff6dd8;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  background-color:#0a0a1f;
+  background-image:
+    radial-gradient(1.6px 1.6px at 6% 12%,  #ffffff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 17% 38%, #cfe3ff 50%, transparent 51%),
+    radial-gradient(2.0px 2.0px at 29%  8%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 36% 61%, #ffe9b0 50%, transparent 51%),
+    radial-gradient(1.7px 1.7px at 44% 27%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 52% 84%, #d7c4ff 50%, transparent 51%),
+    radial-gradient(2.2px 2.2px at 61% 16%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 68% 49%, #b9f0ff 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 74% 73%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 81% 31%, #ffd9f0 50%, transparent 51%),
+    radial-gradient(2.1px 2.1px at 88% 58%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 94% 20%, #cfe3ff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 11% 77%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 23% 92%, #ffe9b0 50%, transparent 51%),
+    radial-gradient(1.9px 1.9px at 57% 41%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 97% 88%, #d7c4ff 50%, transparent 51%),
+    radial-gradient(900px 620px at 82% -8%,  rgba(120, 60, 220, .50), transparent 70%),
+    radial-gradient(760px 540px at -6% 18%,  rgba(0, 150, 220, .42), transparent 70%),
+    radial-gradient(820px 600px at 50% 112%, rgba(220, 40, 160, .38), transparent 70%),
+    linear-gradient(160deg, #0b0a26 0%, #120a2e 42%, #0a1030 100%);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+.wrap{max-width:1060px;margin:0 auto;padding:54px 28px 80px}
+
+.badge{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:.22em;
+  text-transform:uppercase;color:#0a0a1f;background:linear-gradient(90deg,#ffd23f,#ff8ad4);
+  padding:7px 16px;border-radius:999px;margin-bottom:20px;
+}
+h1{
+  margin:0 0 10px;font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;
+  background:linear-gradient(92deg,#ffd23f 0%,#ff6dd8 38%,#4dd8ff 78%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.rx{
+  display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:21px;color:#ffe9b0;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 15px;margin:6px 0 10px;
+}
+.lede{color:var(--mut);font-size:17px;max-width:70ch}
+
+.panel{
+  margin-top:34px;border-radius:20px;padding:34px 32px;
+  background:rgba(12,10,38,.62);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 24px 70px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+.sample{padding:26px 0;border-bottom:1px dashed rgba(255,255,255,.14)}
+.sample:first-child{padding-top:4px}
+.sample:last-child{border-bottom:0;padding-bottom:4px}
+.tag{
+  font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mut);margin-bottom:12px;
+}
+.val{display:block;word-break:break-all;overflow-wrap:anywhere;margin:0}
+.meta{margin-top:11px;font-size:13px;color:var(--mut)}
+.meta b{color:#dfe4ff;font-weight:700}
+
+/* each sample keeps these for the life of the page, only the text changes */
+.s1 .val{
+  font-family:"Impact","Haettenschweiler","Arial Black",Arial,sans-serif;
+  font-size:62px;line-height:1.04;font-weight:900;letter-spacing:-.01em;
+  color:var(--gold);text-shadow:0 0 26px rgba(255,210,63,.45);
+}
+.s2 .val{
+  font-family:Georgia,"Times New Roman",Didot,serif;
+  font-size:48px;line-height:1.12;font-weight:700;
+  color:var(--red);text-shadow:0 0 22px rgba(255,77,109,.40);
+}
+.s3 .val{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:36px;line-height:1.22;font-style:italic;font-weight:500;
+  color:var(--cyan);text-shadow:0 0 18px rgba(77,216,255,.38);
+}
+.s4 .val{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:26px;line-height:1.35;font-weight:800;letter-spacing:.01em;
+  color:var(--lime);text-shadow:0 0 16px rgba(155,255,77,.34);
+}
+.s5 .val{
+  font-family:"Snell Roundhand","Brush Script MT","Apple Chancery","Segoe Script",cursive;
+  font-size:19px;line-height:1.5;font-weight:400;
+  color:var(--magenta);text-shadow:0 0 14px rgba(255,109,216,.34);
+}
+
+.control{
+  margin-top:26px;border-radius:16px;padding:20px 24px;
+  background:rgba(255,255,255,.05);border:1px dashed rgba(255,255,255,.22);
+}
+.control p{margin:0 0 8px;font-size:13.5px;color:var(--mut)}
+.control p:last-child{margin:0}
+.control b{color:#dfe4ff}
+
+footer{margin-top:30px;color:var(--mut);font-size:13px}
+
+@media (max-width:720px){
+  .wrap{padding:34px 18px 64px}
+  h1{font-size:33px}
+  .rx{font-size:17px}
+  .panel{padding:22px 18px;border-radius:16px}
+  .s1 .val{font-size:38px}
+  .s2 .val{font-size:30px}
+  .s3 .val{font-size:24px}
+  .s4 .val{font-size:19px}
+  .s5 .val{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="badge">Custom text rule</div>
+  <h1>Regex match playground</h1>
+  <div class="rx">common-.{1,50}$</div>
+  <p class="lede">
+    Five values that all match the rule. Each keeps its own font, size, weight, style and
+    colour on every load. Only the text and its length change, so anything the rule fails
+    to ignore shows up on its own.
+  </p>
+
+  <div class="panel">
+
+    <div class="sample s1">
+      <div class="tag">Sample 1 &middot; gold &middot; very large, bold</div>
+      <span class="val" data-rx data-min="1" data-max="8">common-W4Ac</span>
+      <div class="meta">suffix length <b class="len">4</b> of 50</div>
+    </div>
+
+    <div class="sample s2">
+      <div class="tag">Sample 2 &middot; red &middot; large serif</div>
+      <span class="val" data-rx data-min="6" data-max="18">common-K2xu9Qp</span>
+      <div class="meta">suffix length <b class="len">7</b> of 50</div>
+    </div>
+
+    <div class="sample s3">
+      <div class="tag">Sample 3 &middot; cyan &middot; italic</div>
+      <span class="val" data-rx data-min="16" data-max="34">common-f3Jq8Lp2Wd6Nz</span>
+      <div class="meta">suffix length <b class="len">15</b> of 50</div>
+    </div>
+
+    <div class="sample s4">
+      <div class="tag">Sample 4 &middot; lime &middot; heavy mono</div>
+      <span class="val" data-rx data-min="30" data-max="50">common-aB3kQ9zR7mT2vX5nL8pJ4wH6yD1s</span>
+      <div class="meta">suffix length <b class="len">30</b> of 50</div>
+    </div>
+
+    <div class="sample s5">
+      <div class="tag">Sample 5 &middot; magenta &middot; cursive, small</div>
+      <span class="val" data-rx data-min="44" data-max="50">common-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST</span>
+      <div class="meta">suffix length <b class="len">46</b> of 50</div>
+    </div>
+
+  </div>
+
+  <div class="control">
+    <p><b>Static control block.</b> Identical on every load. A difference reported inside this
+    block means the rule has over matched and is touching content it was never meant to.</p>
+    <p>Reference line: the quick brown fox jumps over the lazy dog, 0123456789.
+    This block contains no value that matches the rule.</p>
+  </div>
+
+  <footer>
+    Background and all five styles are fixed. Add <b>?static=1</b> to the URL to stop the
+    values randomising.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  if (/[?&]static=1/.test(location.search)) return;
+
+  var CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' +
+              '0123456789-_.+:/#@!%';
+  var rnd = function (n) { return Math.floor(Math.random() * n); };
+
+  var els = document.querySelectorAll('[data-rx]'), i, el, lo, hi, n, s, j, meta;
+  for (i = 0; i < els.length; i++) {
+    el = els[i];
+    lo = parseInt(el.getAttribute('data-min'), 10) || 1;
+    hi = parseInt(el.getAttribute('data-max'), 10) || 50;
+    if (hi > 50) hi = 50;
+    if (lo < 1) lo = 1;
+    n = lo + rnd(hi - lo + 1);
+
+    s = '';
+    for (j = 0; j < n; j++) s += CHARS.charAt(rnd(CHARS.length));
+
+    el.textContent = 'common-' + s;
+
+    meta = el.parentNode.querySelector('.len');
+    if (meta) meta.textContent = String(n);
+  }
+})();
+</script>
+
+</body>
+</html>
