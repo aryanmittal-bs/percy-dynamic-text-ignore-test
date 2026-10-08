@@ -11,8 +11,8 @@
   One big bold value and nothing else that moves. No randomising at all, so two
   captures of this page differ ONLY in the suffix you put in the URL.
 
-      ?v=1234            ->  common-1234        (this is the default)
-      ?v=123455678       ->  common-123455678
+      ?v=1234            ->  common-1234
+      ?v=567891011       ->  common-567891011   (this is the default now)
 
   Capture ?v=1234 as the baseline, then capture a longer one under the SAME
   snapshot name. The only difference between the two images is the extra
@@ -67,7 +67,7 @@ body{
 
   <div class="rule">common-.{1,50}$</div>
 
-  <p class="value" id="v">common-1234</p>
+  <p class="value" id="v">common-567891011</p>
 
   <div class="control">
     <p><b>Static control block.</b> Identical in every capture of this page. A difference
