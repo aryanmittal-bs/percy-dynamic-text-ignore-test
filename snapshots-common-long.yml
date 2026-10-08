@@ -1,0 +1,5 @@
+# Same snapshot name, longer suffix. Run this after approving the baseline.
+snapshots:
+  - name: "common regex length test"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/common-value.html?v=123455678
+    widths: [1280]

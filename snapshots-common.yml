@@ -1,0 +1,8 @@
+# Controlled length test for the custom text rule  common-.{1,50}$
+# Capture 1 (baseline) uses the default value, common-1234.
+# Capture 2 points the SAME snapshot name at ?v=123455678 so the only
+# difference between the two images is the extra characters on the end.
+snapshots:
+  - name: "common regex length test"
+    url: https://aryanmittal-bs.github.io/percy-dynamic-text-ignore-test/common-value.html
+    widths: [1280]
