@@ -66,17 +66,26 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
   margin:0;font-size:54px;line-height:1.28;font-weight:700;letter-spacing:-.01em;
   color:#0f1115;word-break:break-all;overflow-wrap:anywhere;
 }
-.val .pre{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:900}
+.latn   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif}
 
-.latn   .val .sfx{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:900}
-.cjk-sc .val{font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
-.cjk-jp .val{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif}
-.cjk-kr .val{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
-.deva   .val{font-family:"Noto Sans Devanagari","Kohinoor Devanagari","Mangal",sans-serif}
-.telu   .val{font-family:"Noto Sans Telugu","Kohinoor Telugu","Gautami",sans-serif}
-.knda   .val{font-family:"Noto Sans Kannada","Kohinoor Kannada","Tunga",sans-serif}
-.arab   .val{font-family:"Noto Sans Arabic","Geeza Pro","Segoe UI",sans-serif}
-.thai   .val{font-family:"Noto Sans Thai","Thonburi","Leelawadee UI",sans-serif}
+/* one element means the strut now comes from Arial Black, so each script's
+   line box is pinned back to the height the two element version produced */
+.cjk-sc .val{line-height:72.11px}
+.cjk-jp .val{line-height:72.11px}
+.cjk-kr .val{line-height:72.11px}
+.deva   .val{line-height:77.11px}
+.telu   .val{line-height:79.11px}
+.knda   .val{line-height:82.11px}
+.arab   .val{line-height:73.11px}
+.thai   .val{line-height:73.11px}
+.cjk-sc .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.cjk-jp .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif}
+.cjk-kr .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.deva   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Devanagari","Kohinoor Devanagari","Mangal",sans-serif}
+.telu   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Telugu","Kohinoor Telugu","Gautami",sans-serif}
+.knda   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Kannada","Kohinoor Kannada","Tunga",sans-serif}
+.arab   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Arabic","Geeza Pro","Segoe UI",sans-serif}
+.thai   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Thai","Thonburi","Leelawadee UI",sans-serif}
 
 .control{
   margin-top:64px;background:#f1f3f6;border:1px dashed #c3c9d2;
@@ -92,6 +101,14 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
   .row{flex-direction:column;gap:4px;padding:10px 0}
   .n{width:auto}
   .val{font-size:34px}
+  .cjk-sc .val{line-height:45.52px}
+  .cjk-jp .val{line-height:45.52px}
+  .cjk-kr .val{line-height:45.52px}
+  .deva   .val{line-height:48.52px}
+  .telu   .val{line-height:49.52px}
+  .knda   .val{line-height:51.52px}
+  .arab   .val{line-height:45.52px}
+  .thai   .val{line-height:45.52px}
 }
 </style>
 </head>
@@ -111,15 +128,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>English <span>&middot; Latin</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="en"><span class="pre">common-</span><span class="sfx" data-pool="en" data-len="5">Leeds</span></p>
+        <p class="val sfx" lang="en" data-pool="en" data-len="5">common-Leeds</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="en"><span class="pre">common-</span><span class="sfx" data-pool="en" data-len="7">Bristol</span></p>
+        <p class="val sfx" lang="en" data-pool="en" data-len="7">common-Bristol</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="en"><span class="pre">common-</span><span class="sfx" data-pool="en" data-len="8">Coventry</span></p>
+        <p class="val sfx" lang="en" data-pool="en" data-len="8">common-Coventry</p>
       </div>
     </section>
 
@@ -127,15 +144,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Chinese <span>&middot; Simplified Han</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="zh-Hans"><span class="pre">common-</span><span class="sfx" data-pool="zh" data-len="5">上海市浦东</span></p>
+        <p class="val sfx" lang="zh-Hans" data-pool="zh" data-len="5">common-上海市浦东</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="zh-Hans"><span class="pre">common-</span><span class="sfx" data-pool="zh" data-len="7">上海市浦东新区</span></p>
+        <p class="val sfx" lang="zh-Hans" data-pool="zh" data-len="7">common-上海市浦东新区</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="zh-Hans"><span class="pre">common-</span><span class="sfx" data-pool="zh" data-len="8">上海市浦东新区张</span></p>
+        <p class="val sfx" lang="zh-Hans" data-pool="zh" data-len="8">common-上海市浦东新区张</p>
       </div>
     </section>
 
@@ -143,15 +160,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Japanese <span>&middot; Kanji and Kana</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="ja"><span class="pre">common-</span><span class="sfx" data-pool="ja" data-len="5">大阪府梅田</span></p>
+        <p class="val sfx" lang="ja" data-pool="ja" data-len="5">common-大阪府梅田</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="ja"><span class="pre">common-</span><span class="sfx" data-pool="ja" data-len="7">大阪府梅田中央</span></p>
+        <p class="val sfx" lang="ja" data-pool="ja" data-len="7">common-大阪府梅田中央</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="ja"><span class="pre">common-</span><span class="sfx" data-pool="ja" data-len="8">大阪府梅田中央区</span></p>
+        <p class="val sfx" lang="ja" data-pool="ja" data-len="8">common-大阪府梅田中央区</p>
       </div>
     </section>
 
@@ -159,15 +176,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Korean <span>&middot; Hangul</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="ko"><span class="pre">common-</span><span class="sfx" data-pool="ko" data-len="5">부산광역시</span></p>
+        <p class="val sfx" lang="ko" data-pool="ko" data-len="5">common-부산광역시</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="ko"><span class="pre">common-</span><span class="sfx" data-pool="ko" data-len="7">부산광역시해운</span></p>
+        <p class="val sfx" lang="ko" data-pool="ko" data-len="7">common-부산광역시해운</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="ko"><span class="pre">common-</span><span class="sfx" data-pool="ko" data-len="8">부산광역시해운대</span></p>
+        <p class="val sfx" lang="ko" data-pool="ko" data-len="8">common-부산광역시해운대</p>
       </div>
     </section>
 
@@ -175,15 +192,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Hindi <span>&middot; Devanagari</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="hi"><span class="pre">common-</span><span class="sfx" data-pool="hi" data-len="5">टठडढत</span></p>
+        <p class="val sfx" lang="hi" data-pool="hi" data-len="5">common-टठडढत</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="hi"><span class="pre">common-</span><span class="sfx" data-pool="hi" data-len="7">टठडढतथद</span></p>
+        <p class="val sfx" lang="hi" data-pool="hi" data-len="7">common-टठडढतथद</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="hi"><span class="pre">common-</span><span class="sfx" data-pool="hi" data-len="8">टठडढतथदध</span></p>
+        <p class="val sfx" lang="hi" data-pool="hi" data-len="8">common-टठडढतथदध</p>
       </div>
     </section>
 
@@ -191,15 +208,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Telugu <span>&middot; Telugu</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="te"><span class="pre">common-</span><span class="sfx" data-pool="te" data-len="5">టఠడఢత</span></p>
+        <p class="val sfx" lang="te" data-pool="te" data-len="5">common-టఠడఢత</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="te"><span class="pre">common-</span><span class="sfx" data-pool="te" data-len="7">టఠడఢతథద</span></p>
+        <p class="val sfx" lang="te" data-pool="te" data-len="7">common-టఠడఢతథద</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="te"><span class="pre">common-</span><span class="sfx" data-pool="te" data-len="8">టఠడఢతథదధ</span></p>
+        <p class="val sfx" lang="te" data-pool="te" data-len="8">common-టఠడఢతథదధ</p>
       </div>
     </section>
 
@@ -207,15 +224,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Kannada <span>&middot; Kannada</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="kn"><span class="pre">common-</span><span class="sfx" data-pool="kn" data-len="5">ಟಠಡಢತ</span></p>
+        <p class="val sfx" lang="kn" data-pool="kn" data-len="5">common-ಟಠಡಢತ</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="kn"><span class="pre">common-</span><span class="sfx" data-pool="kn" data-len="7">ಟಠಡಢತಥದ</span></p>
+        <p class="val sfx" lang="kn" data-pool="kn" data-len="7">common-ಟಠಡಢತಥದ</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="kn"><span class="pre">common-</span><span class="sfx" data-pool="kn" data-len="8">ಟಠಡಢತಥದಧ</span></p>
+        <p class="val sfx" lang="kn" data-pool="kn" data-len="8">common-ಟಠಡಢತಥದಧ</p>
       </div>
     </section>
 
@@ -223,15 +240,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Arabic <span>&middot; Arabic, right to left</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="ar"><span class="pre">common-</span><span class="sfx" data-pool="ar" data-len="5">رزسشص</span></p>
+        <p class="val sfx" lang="ar" data-pool="ar" data-len="5">common-رزسشص</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="ar"><span class="pre">common-</span><span class="sfx" data-pool="ar" data-len="7">رزسشصضط</span></p>
+        <p class="val sfx" lang="ar" data-pool="ar" data-len="7">common-رزسشصضط</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="ar"><span class="pre">common-</span><span class="sfx" data-pool="ar" data-len="8">رزسشصضطظ</span></p>
+        <p class="val sfx" lang="ar" data-pool="ar" data-len="8">common-رزسشصضطظ</p>
       </div>
     </section>
 
@@ -239,15 +256,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Thai <span>&middot; Thai</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" lang="th"><span class="pre">common-</span><span class="sfx" data-pool="th" data-len="5">ดตถทธ</span></p>
+        <p class="val sfx" lang="th" data-pool="th" data-len="5">common-ดตถทธ</p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" lang="th"><span class="pre">common-</span><span class="sfx" data-pool="th" data-len="7">ดตถทธนบ</span></p>
+        <p class="val sfx" lang="th" data-pool="th" data-len="7">common-ดตถทธนบ</p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" lang="th"><span class="pre">common-</span><span class="sfx" data-pool="th" data-len="8">ดตถทธนบป</span></p>
+        <p class="val sfx" lang="th" data-pool="th" data-len="8">common-ดตถทธนบป</p>
       </div>
     </section>
 
@@ -273,7 +290,7 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
     if (!pool || !n) continue;
     s = '';
     for (j = 0; j < n; j++) s += pool.charAt(Math.floor(Math.random() * pool.length));
-    el.textContent = s;
+    el.textContent = 'common-' + s;
   }
 })();
 </script>

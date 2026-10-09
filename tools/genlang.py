@@ -124,17 +124,26 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
   margin:0;font-size:54px;line-height:1.28;font-weight:700;letter-spacing:-.01em;
   color:#0f1115;word-break:break-all;overflow-wrap:anywhere;
 }
-.val .pre{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:900}
+.latn   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif}
 
-.latn   .val .sfx{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:900}
-.cjk-sc .val{font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
-.cjk-jp .val{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif}
-.cjk-kr .val{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
-.deva   .val{font-family:"Noto Sans Devanagari","Kohinoor Devanagari","Mangal",sans-serif}
-.telu   .val{font-family:"Noto Sans Telugu","Kohinoor Telugu","Gautami",sans-serif}
-.knda   .val{font-family:"Noto Sans Kannada","Kohinoor Kannada","Tunga",sans-serif}
-.arab   .val{font-family:"Noto Sans Arabic","Geeza Pro","Segoe UI",sans-serif}
-.thai   .val{font-family:"Noto Sans Thai","Thonburi","Leelawadee UI",sans-serif}
+/* one element means the strut now comes from Arial Black, so each script's
+   line box is pinned back to the height the two element version produced */
+.cjk-sc .val{line-height:72.11px}
+.cjk-jp .val{line-height:72.11px}
+.cjk-kr .val{line-height:72.11px}
+.deva   .val{line-height:77.11px}
+.telu   .val{line-height:79.11px}
+.knda   .val{line-height:82.11px}
+.arab   .val{line-height:73.11px}
+.thai   .val{line-height:73.11px}
+.cjk-sc .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.cjk-jp .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif}
+.cjk-kr .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.deva   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Devanagari","Kohinoor Devanagari","Mangal",sans-serif}
+.telu   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Telugu","Kohinoor Telugu","Gautami",sans-serif}
+.knda   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Kannada","Kohinoor Kannada","Tunga",sans-serif}
+.arab   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Arabic","Geeza Pro","Segoe UI",sans-serif}
+.thai   .val{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,"Noto Sans Thai","Thonburi","Leelawadee UI",sans-serif}
 
 .control{
   margin-top:64px;background:#f1f3f6;border:1px dashed #c3c9d2;
@@ -150,6 +159,14 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
   .row{flex-direction:column;gap:4px;padding:10px 0}
   .n{width:auto}
   .val{font-size:34px}
+  .cjk-sc .val{line-height:45.52px}
+  .cjk-jp .val{line-height:45.52px}
+  .cjk-kr .val{line-height:45.52px}
+  .deva   .val{line-height:48.52px}
+  .telu   .val{line-height:49.52px}
+  .knda   .val{line-height:51.52px}
+  .arab   .val{line-height:45.52px}
+  .thai   .val{line-height:45.52px}
 }
 """
 
@@ -173,7 +190,7 @@ SCRIPT = """<script>
     if (!pool || !n) continue;
     s = '';
     for (j = 0; j < n; j++) s += pool.charAt(Math.floor(Math.random() * pool.length));
-    el.textContent = s;
+    el.textContent = 'common-' + s;
   }
 })();
 </script>""" % POOLS_JS
@@ -185,9 +202,8 @@ for key, name, script, lang, cls, vals, pool in LANGS:
         rows.append(
             '      <div class="row">\n'
             '        <div class="n">%d chars</div>\n'
-            '        <p class="val" lang="%s">'
-            '<span class="pre">common-</span>'
-            '<span class="sfx" data-pool="%s" data-len="%d">%s</span></p>\n'
+            '        <p class="val sfx" lang="%s" data-pool="%s" data-len="%d">'
+            'common-%s</p>\n'
             '      </div>' % (n, lang, key, n, vals[n]))
     blocks.append(
         '    <section class="lang %s">\n'
