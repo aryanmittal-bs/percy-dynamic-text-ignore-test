@@ -8,21 +8,24 @@
   ============================================================================
   NON LATIN SCRIPT FIXTURE   for the custom text rule  common-.{1,50}$
   ============================================================================
-  Eight scripts, three values each, at 5, 7 and 8 characters after `common-`.
-  Every value is verified to be exactly that many Unicode code points, which is
-  what `.` counts in a Python regex.
+  Nine scripts, three values each, at 5, 7 and 8 characters after `common-`.
 
-  Chinese, Japanese and Korean use real place names, one code point per visible
-  character. The alphabetic scripts use standalone letters with no combining
-  marks, so what you count on screen is what the regex counts. Mixing in vowel
-  signs would make the two disagree and muddy the test.
+  Every suffix is regenerated on each page load from that script's own
+  character pool, and always to the exact code point count written in
+  data-len. So a fresh capture always differs from the last one, and the
+  length never moves.
 
-  Each suffix lives in its own <span class="sfx"> so the characters can be
-  swapped or reordered later without touching anything else.
+  Only the suffixes change. Headings, labels, the 5/7/8 markers, fonts, sizes
+  and the static control block are identical on every load.
 
-  Fonts are pulled from Google Noto so the scripts render the same wherever the
-  page is captured, rather than depending on what the capture machine happens to
-  have installed.
+  Each pool holds single code point characters with no combining marks, so the
+  count you see on screen is the count the regex sees. Mixing in vowel signs
+  would make the two disagree and muddy the test.
+
+  Fonts come from Google Noto so the scripts render the same wherever the page
+  is captured, rather than depending on what the capture machine has installed.
+
+  ?static=1 switches randomising off and shows the values written in the HTML.
   ============================================================================
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +68,7 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
 }
 .val .pre{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:900}
 
+.latn   .val .sfx{font-family:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:900}
 .cjk-sc .val{font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
 .cjk-jp .val{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif}
 .cjk-kr .val{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -98,23 +102,40 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
   <h1>common- in other scripts</h1>
   <div class="rule">common-.{1,50}$</div>
   <p class="lede">
-    Eight scripts, three values each, at 5, 7 and 8 characters after the prefix.
+    Nine scripts, three values each, at 5, 7 and 8 characters after the prefix.
     Every value matches the rule and sits well inside the 50 character bound.
+    The characters change on every load, the lengths never do.
   </p>
+
+    <section class="lang latn">
+      <h2>English <span>&middot; Latin</span></h2>
+      <div class="row">
+        <div class="n">5 chars</div>
+        <p class="val" lang="en"><span class="pre">common-</span><span class="sfx" data-pool="en" data-len="5">Leeds</span></p>
+      </div>
+      <div class="row">
+        <div class="n">7 chars</div>
+        <p class="val" lang="en"><span class="pre">common-</span><span class="sfx" data-pool="en" data-len="7">Bristol</span></p>
+      </div>
+      <div class="row">
+        <div class="n">8 chars</div>
+        <p class="val" lang="en"><span class="pre">common-</span><span class="sfx" data-pool="en" data-len="8">Coventry</span></p>
+      </div>
+    </section>
 
     <section class="lang cjk-sc">
       <h2>Chinese <span>&middot; Simplified Han</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="zh-Hans" data-len="5" lang="zh-Hans"><span class="pre">common-</span><span class="sfx">上海市浦东</span></p>
+        <p class="val" lang="zh-Hans"><span class="pre">common-</span><span class="sfx" data-pool="zh" data-len="5">上海市浦东</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="zh-Hans" data-len="7" lang="zh-Hans"><span class="pre">common-</span><span class="sfx">上海市浦东新区</span></p>
+        <p class="val" lang="zh-Hans"><span class="pre">common-</span><span class="sfx" data-pool="zh" data-len="7">上海市浦东新区</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="zh-Hans" data-len="8" lang="zh-Hans"><span class="pre">common-</span><span class="sfx">上海市浦东新区张</span></p>
+        <p class="val" lang="zh-Hans"><span class="pre">common-</span><span class="sfx" data-pool="zh" data-len="8">上海市浦东新区张</span></p>
       </div>
     </section>
 
@@ -122,15 +143,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Japanese <span>&middot; Kanji and Kana</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="ja" data-len="5" lang="ja"><span class="pre">common-</span><span class="sfx">大阪府梅田</span></p>
+        <p class="val" lang="ja"><span class="pre">common-</span><span class="sfx" data-pool="ja" data-len="5">大阪府梅田</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="ja" data-len="7" lang="ja"><span class="pre">common-</span><span class="sfx">大阪府梅田中央</span></p>
+        <p class="val" lang="ja"><span class="pre">common-</span><span class="sfx" data-pool="ja" data-len="7">大阪府梅田中央</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="ja" data-len="8" lang="ja"><span class="pre">common-</span><span class="sfx">大阪府梅田中央区</span></p>
+        <p class="val" lang="ja"><span class="pre">common-</span><span class="sfx" data-pool="ja" data-len="8">大阪府梅田中央区</span></p>
       </div>
     </section>
 
@@ -138,15 +159,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Korean <span>&middot; Hangul</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="ko" data-len="5" lang="ko"><span class="pre">common-</span><span class="sfx">부산광역시</span></p>
+        <p class="val" lang="ko"><span class="pre">common-</span><span class="sfx" data-pool="ko" data-len="5">부산광역시</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="ko" data-len="7" lang="ko"><span class="pre">common-</span><span class="sfx">부산광역시해운</span></p>
+        <p class="val" lang="ko"><span class="pre">common-</span><span class="sfx" data-pool="ko" data-len="7">부산광역시해운</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="ko" data-len="8" lang="ko"><span class="pre">common-</span><span class="sfx">부산광역시해운대</span></p>
+        <p class="val" lang="ko"><span class="pre">common-</span><span class="sfx" data-pool="ko" data-len="8">부산광역시해운대</span></p>
       </div>
     </section>
 
@@ -154,15 +175,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Hindi <span>&middot; Devanagari</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="hi" data-len="5" lang="hi"><span class="pre">common-</span><span class="sfx">टठडढत</span></p>
+        <p class="val" lang="hi"><span class="pre">common-</span><span class="sfx" data-pool="hi" data-len="5">टठडढत</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="hi" data-len="7" lang="hi"><span class="pre">common-</span><span class="sfx">टठडढतथद</span></p>
+        <p class="val" lang="hi"><span class="pre">common-</span><span class="sfx" data-pool="hi" data-len="7">टठडढतथद</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="hi" data-len="8" lang="hi"><span class="pre">common-</span><span class="sfx">टठडढतथदध</span></p>
+        <p class="val" lang="hi"><span class="pre">common-</span><span class="sfx" data-pool="hi" data-len="8">टठडढतथदध</span></p>
       </div>
     </section>
 
@@ -170,15 +191,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Telugu <span>&middot; Telugu</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="te" data-len="5" lang="te"><span class="pre">common-</span><span class="sfx">టఠడఢత</span></p>
+        <p class="val" lang="te"><span class="pre">common-</span><span class="sfx" data-pool="te" data-len="5">టఠడఢత</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="te" data-len="7" lang="te"><span class="pre">common-</span><span class="sfx">టఠడఢతథద</span></p>
+        <p class="val" lang="te"><span class="pre">common-</span><span class="sfx" data-pool="te" data-len="7">టఠడఢతథద</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="te" data-len="8" lang="te"><span class="pre">common-</span><span class="sfx">టఠడఢతథదధ</span></p>
+        <p class="val" lang="te"><span class="pre">common-</span><span class="sfx" data-pool="te" data-len="8">టఠడఢతథదధ</span></p>
       </div>
     </section>
 
@@ -186,15 +207,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Kannada <span>&middot; Kannada</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="kn" data-len="5" lang="kn"><span class="pre">common-</span><span class="sfx">ಟಠಡಢತ</span></p>
+        <p class="val" lang="kn"><span class="pre">common-</span><span class="sfx" data-pool="kn" data-len="5">ಟಠಡಢತ</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="kn" data-len="7" lang="kn"><span class="pre">common-</span><span class="sfx">ಟಠಡಢತಥದ</span></p>
+        <p class="val" lang="kn"><span class="pre">common-</span><span class="sfx" data-pool="kn" data-len="7">ಟಠಡಢತಥದ</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="kn" data-len="8" lang="kn"><span class="pre">common-</span><span class="sfx">ಟಠಡಢತಥದಧ</span></p>
+        <p class="val" lang="kn"><span class="pre">common-</span><span class="sfx" data-pool="kn" data-len="8">ಟಠಡಢತಥದಧ</span></p>
       </div>
     </section>
 
@@ -202,15 +223,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Arabic <span>&middot; Arabic, right to left</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="ar" data-len="5" lang="ar"><span class="pre">common-</span><span class="sfx">رزسشص</span></p>
+        <p class="val" lang="ar"><span class="pre">common-</span><span class="sfx" data-pool="ar" data-len="5">رزسشص</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="ar" data-len="7" lang="ar"><span class="pre">common-</span><span class="sfx">رزسشصضط</span></p>
+        <p class="val" lang="ar"><span class="pre">common-</span><span class="sfx" data-pool="ar" data-len="7">رزسشصضط</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="ar" data-len="8" lang="ar"><span class="pre">common-</span><span class="sfx">رزسشصضطظ</span></p>
+        <p class="val" lang="ar"><span class="pre">common-</span><span class="sfx" data-pool="ar" data-len="8">رزسشصضطظ</span></p>
       </div>
     </section>
 
@@ -218,15 +239,15 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
       <h2>Thai <span>&middot; Thai</span></h2>
       <div class="row">
         <div class="n">5 chars</div>
-        <p class="val" data-lang="th" data-len="5" lang="th"><span class="pre">common-</span><span class="sfx">ดตถทธ</span></p>
+        <p class="val" lang="th"><span class="pre">common-</span><span class="sfx" data-pool="th" data-len="5">ดตถทธ</span></p>
       </div>
       <div class="row">
         <div class="n">7 chars</div>
-        <p class="val" data-lang="th" data-len="7" lang="th"><span class="pre">common-</span><span class="sfx">ดตถทธนบ</span></p>
+        <p class="val" lang="th"><span class="pre">common-</span><span class="sfx" data-pool="th" data-len="7">ดตถทธนบ</span></p>
       </div>
       <div class="row">
         <div class="n">8 chars</div>
-        <p class="val" data-lang="th" data-len="8" lang="th"><span class="pre">common-</span><span class="sfx">ดตถทธนบป</span></p>
+        <p class="val" lang="th"><span class="pre">common-</span><span class="sfx" data-pool="th" data-len="8">ดตถทธนบป</span></p>
       </div>
     </section>
 
@@ -239,6 +260,23 @@ h1{font-size:38px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-wei
   </div>
 
 </div>
+
+<script>
+(function () {
+  if (/[?&]static=1/.test(location.search)) return;
+  var POOLS = {"en": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", "zh": "上海市浦东新区张北京朝阳中国广州深圳天津重庆南杭成都武汉西安长沙青岛大连", "ja": "大阪府梅田中央区東京都新宿役所名古屋横浜神戸札幌福岡仙台奈良広島金沢静", "ko": "부산광역시해운대서울특별강남구인천공항경기도제주세종전수원성", "hi": "कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह", "te": "కఖగఘఙచఛజఝఞటఠడఢణతథదధనపఫబభమయరలవశషసహ", "kn": "ಕಖಗಘಙಚಛಜಝಞಟಠಡಢಣತಥದಧನಪಫಬಭಮಯರಲವಶಷಸಹ", "ar": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي", "th": "กขคงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ"};
+  var els = document.querySelectorAll('.sfx'), i, el, pool, n, s, j;
+  for (i = 0; i < els.length; i++) {
+    el = els[i];
+    pool = POOLS[el.getAttribute('data-pool')];
+    n = parseInt(el.getAttribute('data-len'), 10);
+    if (!pool || !n) continue;
+    s = '';
+    for (j = 0; j < n; j++) s += pool.charAt(Math.floor(Math.random() * pool.length));
+    el.textContent = s;
+  }
+})();
+</script>
 
 </body>
 </html>
