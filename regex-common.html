@@ -6,13 +6,14 @@
 <title>Custom regex fixture: common-.{1,50}$</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Noto+Sans+JP:wght@700&family=Noto+Sans+KR:wght@700&family=Noto+Sans+Devanagari:wght@700&family=Noto+Sans+Telugu:wght@700&family=Noto+Sans+Kannada:wght@700&family=Noto+Sans+Arabic:wght@700&family=Noto+Sans+Thai:wght@700&display=swap">
 <!--
   ============================================================================
   CUSTOM TEXT REGEX FIXTURE      regex:  common-.{1,50}$
   ============================================================================
-  Six samples. Each keeps its OWN fixed font, size, weight, style and colour
-  on every load. Only the TEXT and its LENGTH change.
+  Thirteen samples. Each keeps its OWN fixed font, size, weight, style and
+  colour, and its OWN fixed suffix LENGTH, on every load. Only the characters
+  change.
 
   Sample 1  gold      very large, bold
   Sample 2  red       large
@@ -20,9 +21,16 @@
   Sample 4  lime      heavy bold, smaller
   Sample 5  magenta   cursive, small
   Sample 6  amber     Chinese, Simplified Han
+  Sample 7  mint      Japanese
+  Sample 8  pink      Korean
+  Sample 9  periwinkle Hindi
+  Sample 10 pale yellow Telugu
+  Sample 11 violet    Kannada
+  Sample 12 aqua      Arabic, right to left
+  Sample 13 coral     Thai
 
-  Suffix lengths are drawn from different bands so short and long cases are
-  both on the page every time, including the 1 and 50 character boundaries.
+  Each sample has a fixed suffix length, from 6 up to 46, so short and long
+  cases are both on the page while no single value ever changes length.
 
   The background is a FIXED set of gradients. Nothing about it is random and
   nothing animates, so it can never produce a difference of its own.
@@ -40,6 +48,13 @@
   --lime:#9bff4d;
   --magenta:#ff6dd8;
   --amber:#ffa94d;
+  --ja:#7cf0c4;
+  --ko:#ff8ad4;
+  --hi:#8ab6ff;
+  --te:#ffe066;
+  --kn:#b388ff;
+  --ar:#4dffd8;
+  --th:#ff9f7a;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -141,6 +156,41 @@ h1{
   font-size:46px;line-height:1.3;font-weight:700;
   color:var(--amber);text-shadow:0 0 20px rgba(255,169,77,.40);
 }
+.s7 .val{
+  font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  font-size:44px;line-height:1.3;font-weight:700;
+  color:var(--ja);text-shadow:0 0 18px rgba(124,240,196,.38);
+}
+.s8 .val{
+  font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:42px;line-height:1.3;font-weight:700;
+  color:var(--ko);text-shadow:0 0 18px rgba(255,138,212,.38);
+}
+.s9 .val{
+  font-family:"Noto Sans Devanagari","Kohinoor Devanagari","Mangal",sans-serif;
+  font-size:40px;line-height:1.3;font-weight:700;
+  color:var(--hi);text-shadow:0 0 18px rgba(138,182,255,.38);
+}
+.s10 .val{
+  font-family:"Noto Sans Telugu","Kohinoor Telugu","Gautami",sans-serif;
+  font-size:38px;line-height:1.3;font-weight:700;
+  color:var(--te);text-shadow:0 0 18px rgba(255,224,102,.38);
+}
+.s11 .val{
+  font-family:"Noto Sans Kannada","Kohinoor Kannada","Tunga",sans-serif;
+  font-size:36px;line-height:1.3;font-weight:700;
+  color:var(--kn);text-shadow:0 0 18px rgba(179,136,255,.38);
+}
+.s12 .val{
+  font-family:"Noto Sans Arabic","Geeza Pro","Segoe UI",sans-serif;
+  font-size:42px;line-height:1.3;font-weight:700;
+  color:var(--ar);text-shadow:0 0 18px rgba(77,255,216,.38);
+}
+.s13 .val{
+  font-family:"Noto Sans Thai","Thonburi","Leelawadee UI",sans-serif;
+  font-size:40px;line-height:1.3;font-weight:700;
+  color:var(--th);text-shadow:0 0 18px rgba(255,159,122,.38);
+}
 
 .control{
   margin-top:26px;border-radius:16px;padding:20px 24px;
@@ -163,6 +213,13 @@ footer{margin-top:30px;color:var(--mut);font-size:13px}
   .s4 .val{font-size:19px}
   .s5 .val{font-size:17px}
   .s6 .val{font-size:28px}
+  .s7 .val{font-size:8px}
+  .s8 .val{font-size:9px}
+  .s9 .val{font-size:10px}
+  .s10 .val{font-size:11px}
+  .s11 .val{font-size:12px}
+  .s12 .val{font-size:13px}
+  .s13 .val{font-size:14px}
 }
 </style>
 </head>
@@ -183,38 +240,80 @@ footer{margin-top:30px;color:var(--mut);font-size:13px}
 
     <div class="sample s1">
       <div class="tag">Sample 1 &middot; gold &middot; very large, bold</div>
-      <span class="val" data-rx data-min="1" data-max="8">common-W4Ac</span>
-      <div class="meta">suffix length <b class="len">4</b> of 50</div>
+      <span class="val" data-rx data-min="6" data-max="6">common-W4Ac</span>
+      <div class="meta">suffix length <b class="len">6</b> of 50</div>
     </div>
 
     <div class="sample s2">
       <div class="tag">Sample 2 &middot; red &middot; large serif</div>
-      <span class="val" data-rx data-min="6" data-max="18">common-K2xu9Qp</span>
-      <div class="meta">suffix length <b class="len">7</b> of 50</div>
+      <span class="val" data-rx data-min="12" data-max="12">common-K2xu9Qp</span>
+      <div class="meta">suffix length <b class="len">12</b> of 50</div>
     </div>
 
     <div class="sample s3">
       <div class="tag">Sample 3 &middot; cyan &middot; italic</div>
-      <span class="val" data-rx data-min="16" data-max="34">common-f3Jq8Lp2Wd6Nz</span>
-      <div class="meta">suffix length <b class="len">15</b> of 50</div>
+      <span class="val" data-rx data-min="24" data-max="24">common-f3Jq8Lp2Wd6Nz</span>
+      <div class="meta">suffix length <b class="len">24</b> of 50</div>
     </div>
 
     <div class="sample s4">
       <div class="tag">Sample 4 &middot; lime &middot; heavy mono</div>
-      <span class="val" data-rx data-min="30" data-max="50">common-aB3kQ9zR7mT2vX5nL8pJ4wH6yD1s</span>
-      <div class="meta">suffix length <b class="len">30</b> of 50</div>
+      <span class="val" data-rx data-min="40" data-max="40">common-aB3kQ9zR7mT2vX5nL8pJ4wH6yD1s</span>
+      <div class="meta">suffix length <b class="len">40</b> of 50</div>
     </div>
 
     <div class="sample s5">
       <div class="tag">Sample 5 &middot; magenta &middot; cursive, small</div>
-      <span class="val" data-rx data-min="44" data-max="50">common-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST</span>
+      <span class="val" data-rx data-min="46" data-max="46">common-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST</span>
       <div class="meta">suffix length <b class="len">46</b> of 50</div>
     </div>
 
     <div class="sample s6">
       <div class="tag">Sample 6 &middot; amber &middot; Chinese</div>
-      <span class="val" data-rx data-min="4" data-max="14" data-chars="上海市浦东新区张北京朝阳中国广州深圳天津重庆南杭成都武汉西安长沙青岛大连福厦门宁波苏无锡合肥郑济昆明贵兰" lang="zh-Hans">common-上海市浦东新区</span>
-      <div class="meta">suffix length <b class="len">7</b> of 50</div>
+      <span class="val" data-rx data-min="10" data-max="10" data-chars="上海市浦东新区张北京朝阳中国广州深圳天津重庆南杭成都武汉西安长沙青岛大连福厦门宁波苏无锡合肥郑济昆明贵兰" lang="zh-Hans">common-上海市浦东新区</span>
+      <div class="meta">suffix length <b class="len">10</b> of 50</div>
+    </div>
+
+    <div class="sample s7">
+      <div class="tag">Sample 7 &middot; mint &middot; Japanese</div>
+      <span class="val" data-rx data-min="8" data-max="8" data-chars="大阪府梅田中央区東京都新宿役所名古屋横浜神戸札幌福岡仙台奈良広島金沢静" lang="ja">common-大阪府梅田中央区</span>
+      <div class="meta">suffix length <b class="len">8</b> of 50</div>
+    </div>
+
+    <div class="sample s8">
+      <div class="tag">Sample 8 &middot; pink &middot; Korean</div>
+      <span class="val" data-rx data-min="9" data-max="9" data-chars="부산광역시해운대서울특별강남구인천공항경기도제주세종전수원성" lang="ko">common-부산광역시해운대서</span>
+      <div class="meta">suffix length <b class="len">9</b> of 50</div>
+    </div>
+
+    <div class="sample s9">
+      <div class="tag">Sample 9 &middot; periwinkle &middot; Hindi</div>
+      <span class="val" data-rx data-min="10" data-max="10" data-chars="कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह" lang="hi">common-कखगघङचछजझञ</span>
+      <div class="meta">suffix length <b class="len">10</b> of 50</div>
+    </div>
+
+    <div class="sample s10">
+      <div class="tag">Sample 10 &middot; pale yellow &middot; Telugu</div>
+      <span class="val" data-rx data-min="11" data-max="11" data-chars="కఖగఘఙచఛజఝఞటఠడఢణతథదధనపఫబభమయరలవశషసహ" lang="te">common-కఖగఘఙచఛజఝఞట</span>
+      <div class="meta">suffix length <b class="len">11</b> of 50</div>
+    </div>
+
+    <div class="sample s11">
+      <div class="tag">Sample 11 &middot; violet &middot; Kannada</div>
+      <span class="val" data-rx data-min="12" data-max="12" data-chars="ಕಖಗಘಙಚಛಜಝಞಟಠಡಢಣತಥದಧನಪಫಬಭಮಯರಲವಶಷಸಹ" lang="kn">common-ಕಖಗಘಙಚಛಜಝಞಟಠ</span>
+      <div class="meta">suffix length <b class="len">12</b> of 50</div>
+    </div>
+
+    <div class="sample s12">
+      <div class="tag">Sample 12 &middot; aqua &middot; Arabic, right to left</div>
+      <span class="val" data-rx data-min="13" data-max="13" data-chars="ابتثجحخدذرزسشصضطظعغفقكلمنهوي" lang="ar">common-ابتثجحخدذرزسش</span>
+      <div class="meta">suffix length <b class="len">13</b> of 50</div>
+    </div>
+
+    <div class="sample s13">
+      <div class="tag">Sample 13 &middot; coral &middot; Thai</div>
+      <span class="val" data-rx data-min="14" data-max="14" data-chars="กขคงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ" lang="th">common-กขคงจฉชซฌญฎฏฐฑ</span>
+      <div class="meta">suffix length <b class="len">14</b> of 50</div>
     </div>
 
   </div>
