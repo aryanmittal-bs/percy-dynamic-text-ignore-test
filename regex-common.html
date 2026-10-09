@@ -4,11 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Custom regex fixture: common-.{1,50}$</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&display=swap">
 <!--
   ============================================================================
   CUSTOM TEXT REGEX FIXTURE      regex:  common-.{1,50}$
   ============================================================================
-  Five samples. Each keeps its OWN fixed font, size, weight, style and colour
+  Six samples. Each keeps its OWN fixed font, size, weight, style and colour
   on every load. Only the TEXT and its LENGTH change.
 
   Sample 1  gold      very large, bold
@@ -16,6 +19,7 @@
   Sample 3  cyan      italic
   Sample 4  lime      heavy bold, smaller
   Sample 5  magenta   cursive, small
+  Sample 6  amber     Chinese, Simplified Han
 
   Suffix lengths are drawn from different bands so short and long cases are
   both on the page every time, including the 1 and 50 character boundaries.
@@ -35,6 +39,7 @@
   --cyan:#4dd8ff;
   --lime:#9bff4d;
   --magenta:#ff6dd8;
+  --amber:#ffa94d;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -131,6 +136,11 @@ h1{
   font-size:19px;line-height:1.5;font-weight:400;
   color:var(--magenta);text-shadow:0 0 14px rgba(255,109,216,.34);
 }
+.s6 .val{
+  font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:46px;line-height:1.3;font-weight:700;
+  color:var(--amber);text-shadow:0 0 20px rgba(255,169,77,.40);
+}
 
 .control{
   margin-top:26px;border-radius:16px;padding:20px 24px;
@@ -152,6 +162,7 @@ footer{margin-top:30px;color:var(--mut);font-size:13px}
   .s3 .val{font-size:24px}
   .s4 .val{font-size:19px}
   .s5 .val{font-size:17px}
+  .s6 .val{font-size:28px}
 }
 </style>
 </head>
@@ -200,6 +211,12 @@ footer{margin-top:30px;color:var(--mut);font-size:13px}
       <div class="meta">suffix length <b class="len">46</b> of 50</div>
     </div>
 
+    <div class="sample s6">
+      <div class="tag">Sample 6 &middot; amber &middot; Chinese</div>
+      <span class="val" data-rx data-min="4" data-max="14" data-chars="上海市浦东新区张北京朝阳中国广州深圳天津重庆南杭成都武汉西安长沙青岛大连福厦门宁波苏无锡合肥郑济昆明贵兰" lang="zh-Hans">common-上海市浦东新区</span>
+      <div class="meta">suffix length <b class="len">7</b> of 50</div>
+    </div>
+
   </div>
 
   <div class="control">
@@ -224,7 +241,7 @@ footer{margin-top:30px;color:var(--mut);font-size:13px}
               '0123456789-_.+:/#@!%';
   var rnd = function (n) { return Math.floor(Math.random() * n); };
 
-  var els = document.querySelectorAll('[data-rx]'), i, el, lo, hi, n, s, j, meta;
+  var els = document.querySelectorAll('[data-rx]'), i, el, lo, hi, n, s, j, meta, pool;
   for (i = 0; i < els.length; i++) {
     el = els[i];
     lo = parseInt(el.getAttribute('data-min'), 10) || 1;
@@ -233,8 +250,9 @@ footer{margin-top:30px;color:var(--mut);font-size:13px}
     if (lo < 1) lo = 1;
     n = lo + rnd(hi - lo + 1);
 
+    pool = el.getAttribute('data-chars') || CHARS;
     s = '';
-    for (j = 0; j < n; j++) s += CHARS.charAt(rnd(CHARS.length));
+    for (j = 0; j < n; j++) s += pool.charAt(rnd(pool.length));
 
     el.textContent = 'common-' + s;
 
